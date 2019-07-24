@@ -23,6 +23,10 @@ $glidLists:(
   	  margin: 0;
   		padding-left: $glid;
   		margin-top: $glid;
+      * {
+        // グリッド内の要素をブロック要素に
+        display: block;
+      }
   	}
   }
 }

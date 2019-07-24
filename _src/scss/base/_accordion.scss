@@ -167,7 +167,7 @@
   input:checked~.modal-window {
     display: flex;
     .modal-content {
-      animation: topbottom ease-in-out	.4s forwards;
+      animation: modal-down ease-in-out	.4s forwards;
     }
   }
 
@@ -184,7 +184,7 @@
 }
 
 
-@keyframes topbottom {
+@keyframes modal-down {
     0% {
       opacity: 0;
       transform: translate(-50%,-100%);
@@ -197,3 +197,58 @@
 
 // Tab CSSonly
 // ------------------------------------------------------------------------
+
+.css-tab {
+  .css-tab-content{
+    [id*="tab"]{
+      display: none;
+      &+*{
+        display: none;
+      }
+      &:first-of-type+*{
+        // display: block;
+      }
+      &:target+*{
+        display: block;
+        &>*{
+          animation: tab-up ease-in-out	.6s forwards;
+        }
+      }
+    }
+  }
+}
+
+// Tab JS
+// ------------------------------------------------------------------------
+
+.tab {
+  .tab-button{
+    cursor: pointer;
+    opacity: .6;
+    transition: .3s;
+    &[class*="active"],&:hover{
+      opacity: 1;
+    }
+  }
+  .tab-content{
+    display: none;
+    &[class*="active"]{
+      display: block;
+      animation: tab-up ease-in-out	.6s forwards;
+    }
+  }
+}
+
+@keyframes tab-up {
+    0% {
+      opacity: 0;
+      transform: translate(0%,50%);
+    }
+    50% {
+      transform: translate(0%,0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0%,0%);
+    }
+}

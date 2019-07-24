@@ -16,9 +16,75 @@
 	<body>
 		<section class="grid-xs s-chwidth-1-1 center padding-xs margin-bottom-l">
 			<div>
-				<h1 class="font-l midasi-3 padding-xs"> アコーディオン・モーダルウィンドウのサンプル
-					<p class="font-s margin-top-m">全てグリッドレイアウト対応。色やサイズ等も自由にカスタマイズ可能</p>
+				<h1 class="font-m midasi-3 padding-m"> タブメニュー・アコーディオン・モーダルウィンドウのサンプル
+					<p class="font-s margin-top-m">全てグリッドレイアウト対応。色やサイズ等も自由にカスタマイズ可能<br>CSSを追加・書き換える事なく、コピペでもコーディングが出来るように作成。</p>
 				</h1>
+			</div>
+		</section>
+		<section class="padding-xs margin-top-s">
+			<div>
+				<h2 class="font-m midasi-2">CSSで動くタブ
+					<p class="font-xs">CSSの:targetセレクタを応用して作成。ちょっとややこしい。</p>
+				</h2>
+			</div>
+			<div class="css-tab margin-top-xs">
+				<p class="font-xs">↓クリックで中身を表示</p>
+				<nav class="grid-xs s-chwidth-1-3 m-chwidth-1-5">
+					<div><a class="padding-xs font-s bgcolor-2 color-w" href="#tab-1-1">tab1-1</a></div>
+					<div><a class="padding-xs font-s bgcolor-4 color-w" href="#tab-1-2">tab1-2</a></div>
+					<div><a class="padding-xs font-s bgcolor-6 color-w" href="#tab-1-3">tab1-3</a></div>
+				</nav>
+				<div class="css-tab-content">
+					<div id="tab-1-1"></div>
+					<div class="padding-xs font-s grid-none all-chwidth-1-1 bgcolor-2-l">
+						<p>tab-1-1</p>
+						<div>ターゲット属性を利用しているので、ブラウザに履歴が残る。<br>アンカー先にジャンプしてしまう現象はアンカー先の要素をdisplay: none;にすることで回避。<br>ボタンの方も連動して色が変わったり出来なかったので、色を変えて差別化。<br>ラジオボタンでの実装も考えたが<br>・ボタンとコンテンツを並列に並べなければならない<br>・作成する都度、タブ用にCSSを作成しなければならない等、<br>自由度が低いと感じたので不採用。<br>非アンカー時、デフォルトで表示出来ないのが難点。(一応、URLにアンカーを付けることで表示は可能。)<br>改善方法模索中。</div>
+					</div>
+					<div id="tab-1-2"></div>
+					<div class="padding-xs font-s grid-none all-chwidth-1-1 bgcolor-4-l">
+						<p>tab-1-2</p>
+						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+					</div>
+					<div id="tab-1-3"></div>
+					<div class="padding-xs font-s grid-none all-chwidth-1-1 bgcolor-6-l">
+						<p>tab-1-3</p>
+						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="padding-xs margin-top-s">
+			<div>
+				<h2 class="font-m midasi-2">JavaScriptで動くタブ
+					<p class="font-xs">CSSで試行錯誤してまで実装する必要などなかったのでは……</p>
+				</h2>
+			</div>
+			<div class="tab margin-top-xs">
+				<nav class="grid-xs s-chwidth-1-3 m-chwidth-1-5">
+					<div class="tab-button active">
+						<p class="padding-xs font-s bgcolor-1 color-w">tab2-1</p>
+					</div>
+					<div class="tab-button">
+						<p class="padding-xs font-s bgcolor-1 color-w">tab2-2</p>
+					</div>
+					<div class="tab-button">
+						<p class="padding-xs font-s bgcolor-1 color-w">tab2-3</p>
+					</div>
+				</nav>
+				<div class="padding-xs font-s grid-none all-chwidth-1-1 bgcolor-1-l">
+					<div class="tab-content active">
+						<p>tab-2-1</p>
+						<div>シンプルに.activeクラスを付与でdisplay:none;を切り替え。<br>ボタンの方にも.activeクラスが付与されるので、適宜スタイルを指定すれば良い。とりあえず、opacityを付けている。<br>ボタンやコンテンツ数が増えてもJavaScriptを書き換えなくても良い。<br>別グループのタブを複数設置する場合の実装方法考え中。その場合、ラジオボタンがシンプルな気がする。<br></div>
+					</div>
+					<div class="tab-content">
+						<p>tab-2-2</p>
+						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+					</div>
+					<div class="tab-content">
+						<p>tab-2-3</p>
+						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section class="padding-xs margin-top-s">
@@ -31,10 +97,10 @@
 					<label class="padding-xs font-s bgcolor-1 color-w" for="modal-1-1">open</label>
 					<label class="modal-overlay" for="modal-1-1"></label>
 					<div class="modal-window">
-						<div class="modal-content padding-xs font-xs padding-xs font-xs">
+						<div class="modal-content padding-xs padding-xs">
 							<label class="icon-right-top" for="modal-1-1"></label>
 							<h3 class="font-m">テキスト1</h3>
-							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+							<div class="font-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
 						</div>
 					</div>
 				</div>
@@ -43,10 +109,10 @@
 					<label class="padding-xs font-s bgcolor-1 color-w" for="modal-1-2">open</label>
 					<label class="modal-overlay" for="modal-1-2"></label>
 					<div class="modal-window">
-						<div class="modal-content padding-xs font-xs">
+						<div class="modal-content padding-xs padding-xs">
 							<label class="icon-right-top" for="modal-1-2"></label>
 							<h3 class="font-m">テキスト2</h3>
-							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+							<div class="font-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
 						</div>
 					</div>
 				</div>
@@ -55,10 +121,10 @@
 					<label class="padding-xs font-s bgcolor-1 color-w" for="modal-1-3">open</label>
 					<label class="modal-overlay" for="modal-1-3"></label>
 					<div class="modal-window">
-						<div class="modal-content padding-xs font-xs">
+						<div class="modal-content padding-xs">
 							<label class="icon-right-top" for="modal-1-3"></label>
 							<h3 class="font-m">テキスト3</h3>
-							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+							<div class="font-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
 						</div>
 					</div>
 				</div>
@@ -67,10 +133,10 @@
 					<label class="padding-xs font-s bgcolor-1 color-w" for="modal-1-4">open</label>
 					<label class="modal-overlay" for="modal-1-4"></label>
 					<div class="modal-window">
-						<div class="modal-content padding-xs font-xs">
+						<div class="modal-content padding-xs">
 							<label class="icon-right-top" for="modal-1-4"></label>
 							<h3 class="font-m">テキスト4</h3>
-							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+							<div class="font-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
 						</div>
 					</div>
 				</div>
@@ -79,10 +145,10 @@
 					<label class="padding-xs font-s bgcolor-1 color-w" for="modal-1-5">open</label>
 					<label class="modal-overlay" for="modal-1-5"></label>
 					<div class="modal-window">
-						<div class="modal-content padding-xs font-xs">
+						<div class="modal-content padding-xs">
 							<label class="icon-right-top" for="modal-1-5"></label>
 							<h3 class="font-m">テキスト5</h3>
-							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+							<div class="font-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
 						</div>
 					</div>
 				</div>
@@ -90,18 +156,18 @@
 		</section>
 		<section class="padding-xs margin-top-s">
 			<div>
-				<h2 class="font-m midasi-2">モーダルウィンドウ | <span class="font-xs">画像もOK</span></h2>
+				<h2 class="font-m midasi-2">モーダルウィンドウ | <span class="font-xs">画像もOK。複雑なやつなら、JavaScriptのプラグイン使ったほうがキレイで簡単。</span></h2>
 			</div>
-			<div class="modal margin-top-xs grid-xs s-chwidth-1-3 m-chwidth-1-5">
+			<div class="modal margin-top-xs grid-xs s-chwidth-1-3">
 				<div>
 					<input id="modal-2-1" type="checkbox" name="modal-2">
 					<label for="modal-2-1"><img src="https://placehold.jp/350x240.png"></label>
 					<label class="modal-overlay" for="modal-2-1"></label>
 					<div class="modal-window">
-						<div class="modal-content padding-xs font-xs padding-xs font-xs">
+						<div class="modal-content padding-xs font-xs padding-xs">
 							<label class="icon-right-top" for="modal-2-1"></label>
 							<h3 class="font-m">テキスト1</h3><img src="https://placehold.jp/350x240.png">
-							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+							<div class="font-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
 						</div>
 					</div>
 				</div>
@@ -110,10 +176,10 @@
 					<label for="modal-2-2"><img src="https://placehold.jp/350x240.png"></label>
 					<label class="modal-overlay" for="modal-2-2"></label>
 					<div class="modal-window">
-						<div class="modal-content padding-xs font-xs">
+						<div class="modal-content padding-xs">
 							<label class="icon-right-top" for="modal-2-2"></label>
 							<h3 class="font-m">テキスト2</h3><img src="https://placehold.jp/350x240.png">
-							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
+							<div class="font-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
 						</div>
 					</div>
 				</div>
@@ -122,33 +188,9 @@
 					<label for="modal-2-3"><img src="https://placehold.jp/350x240.png"></label>
 					<label class="modal-overlay" for="modal-2-3"></label>
 					<div class="modal-window">
-						<div class="modal-content padding-xs font-xs">
+						<div class="modal-content padding-xs">
 							<label class="icon-right-top" for="modal-2-3"></label>
-							<h3 class="font-m">テキスト3</h3><img src="https://placehold.jp/350x240.png">
-							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
-						</div>
-					</div>
-				</div>
-				<div>
-					<input id="modal-2-4" type="checkbox" name="modal-2">
-					<label for="modal-2-4"><img src="https://placehold.jp/350x240.png"></label>
-					<label class="modal-overlay" for="modal-2-4"></label>
-					<div class="modal-window">
-						<div class="modal-content padding-xs font-xs">
-							<label class="icon-right-top" for="modal-2-4"></label>
-							<h3 class="font-m">テキスト4</h3><img src="https://placehold.jp/350x240.png">
-							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
-						</div>
-					</div>
-				</div>
-				<div>
-					<input id="modal-2-5" type="checkbox" name="modal-2">
-					<label for="modal-2-5"><img src="https://placehold.jp/350x240.png"></label>
-					<label class="modal-overlay" for="modal-2-5"></label>
-					<div class="modal-window">
-						<div class="modal-content padding-xs font-xs">
-							<label class="icon-right-top" for="modal-2-5"></label>
-							<h3 class="font-m">テキスト5</h3><img src="https://placehold.jp/350x240.png">
+							<h3 class="font-m">テキスト3</h3><img class="font-xs" src="https://placehold.jp/350x240.png">
 							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
 						</div>
 					</div>
@@ -269,14 +311,38 @@
 				</div>
 			</div>
 		</section>
-		<section class="grid s-chwidth-1-1 padding-xs margin-top-s">
+		<section class="padding-xs margin-top-s">
 			<div>
+				<h2 class="font-m midasi-2">おまけ | <span class="font-xs">Q&Aページ末尾によくある感じのやつ</span></h2>
+			</div>
+			<div class="margin-top-l">
 				<h2 class="font-m midasi-3 center padding-s">疑問や不明点は解決しましたか？
 					<p class="font-s">その他、不明点や商品についてのご質問はこちらよりお問い合わせください。</p><a class="button-color-4 mail margin-m" href="" target="_blank">お問い合わせフォームへ</a>
 					<p class="font-xs">営業時間 9:00~17:00（土日祝・夏季休業・年末年始を除く）</p>
 				</h2>
 			</div>
 		</section>
-		<script></script>
+		<script>
+			// ボタンactive切り替え
+			var tab_btn = document.getElementsByClassName('tab-button');
+			var tab_content = document.getElementsByClassName('tab-content');
+			for (var i=0; i<tab_btn.length; i++){
+				btnAction(tab_btn[i],tab_content[i],i);
+			}
+			function btnAction(btnDOM,tabContent,btnId){
+				btnDOM.addEventListener("click", function(){
+					tabContent.classList.add('active');
+					btnDOM.classList.add('active');
+					for (var i=0; i<tab_btn.length; i++){
+						if(btnId !== i){
+							if(tab_content[i].classList.contains('active')){
+								tab_content[i].classList.remove('active');
+								tab_btn[i].classList.remove('active');
+							}
+						}
+					}
+				})
+			}
+		</script>
 	</body>
 </html>

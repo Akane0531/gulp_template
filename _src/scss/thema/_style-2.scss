@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+// basic
+// @import "utility/_utility.scss";
+@import "base/_variables-2.scss";
+@import "base/_color-2.scss";
+@import "base/_button.scss";
+@import "base/_decoration.scss";
+// @import "utility/_mixins.scss";
+@import "base/_font-2.scss";
+@import "base/_page.scss";
+
+// layout
+// @import "layout/_layout.scss";
+@import "layout/_glid.scss";
+@import "base/_margin-padding.scss";
+
+// component - common
+@import "component/common/_header.scss";
+@import "component/common/_footer.scss";
+
+// component - parts
+@import "component/parts/_parts.scss";

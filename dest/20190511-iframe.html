@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+		<link href="./assets/img/favicon/favicon.ico" rel="icon" type="image/x-icon">
+		<link href="./assets/img/favicon/icon.png" rel="apple-touch-icon" sizes="180x180">
+		<link href="./assets/css/reset.min.css" rel="stylesheet">
+		<link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" rel="stylesheet">
+		<script src="https://www.rakuten.ne.jp/gold/re-wall/js/jquery.js"></script>
+		<style>
+			/* html{
+				background-color:#b2b2b2;
+			}
+			.wrap{
+				background-color:#f5f5f5;
+			} */
+			
+		</style>
+	</head>
+	<body>
+		<div class="padding-s" id="PageTop" style="background-image: url(&quot;img/summersale_bg.jpg&quot;); background-repeat: no-repeat; background-size:  100%; border-bottom: solid 4px #13547a;">
+			<div class="wrap center"><a href="https://www.rakuten.ne.jp/gold/re-wall/timesale-page/sinseikatu.html" target="_top"><img class="hover-huwahuwa" src="img/summersale_header.png" width="100%"></a><a class="button-color-4" href="https://www.rakuten.ne.jp/gold/re-wall/timesale-page/sinseikatu.html" target="_top">サマーセール会場はコチラ</a></div>
+		</div>
+		<div style="background-image: url(&quot;img/bgimg-01.jpg&quot;); background-repeat: repeat-x;">
+			<div class="padding-top-l center">
+				<h2 class="midasi font-l">Campaign
+					<p class="font-xs color-4">キャンペーン情報</p>
+				</h2>
+			</div>
+			<div class="all-width-1-1 padding-s margin-bottom-l">
+				<div class="grid center">
+					<div class="s-width-1-2 m-width-1-4 l-width-1-4"><a href="https://coupon.rakuten.co.jp/getCoupon?getkey=R0M2TC1UTk5OLUFPREYtVVlFNA--&rt=" target="_top"><img class="hover-up" src="https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-3perc.jpg"></a></div>
+					<div class="s-width-1-2 m-width-1-4 l-width-1-4"><a href="https://coupon.rakuten.co.jp/getCoupon?getkey=OTZBQi01UjhLLVJIMlgtUFM2Ug--&rt="><img class="hover-up" src="https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-5perc.jpg" target="_top"></a></div>
+				</div>
+			</div>
+		</div>
+		<div class="margin-bottom-m all-width-1-1 center"><a class="button-color-4" href="https://www.rakuten.ne.jp/gold/re-wall/timesale-page/timesale.html" target="_top">オトクなセール情報ページはこちら</a></div>
+		<script>
+			// tab
+			// tabCountにタブの個数を入力
+			var tabCount = 7;
+			var Day = new Date().getDay();
+			
+			for (var i=0; i<tabCount; i++) {
+				document.getElementById("timesale_"+i).style.display = "none";
+			}			
+			document.getElementById("timesale_"+Day).style.display = "";
+			
+		</script>
+		<script>
+			// スムーススクロール
+			$(function(){
+			  $('a[href^="#"]').click(function(){
+			    var speed = 500;
+			    var href= $(this).attr("href");
+			    var target = $(href == "#" || href == "" ? 'html' : href);
+			    var position = target.offset().top;
+			    $("html, body").animate({scrollTop:position}, speed, "swing");
+			    return false;
+			  });
+			});
+		</script>
+	</body>
+</html>

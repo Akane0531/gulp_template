@@ -1,0 +1,492 @@
+doctype html
+
+include base/_config
+
+html(lang="ja")
+	head
+		include module/common/_head
+		link(href= paths.css + "summersale-style.min.css", rel="stylesheet")
+		title 壁紙のトキワ Re-wall | サマーセール特設ページ
+		//遅延読み込み(画像数が多い場合の読み込み速度低下対策)
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.0/lazysizes.min.js', async='')
+
+		style.
+			.area{
+				background-color: rgba(255,255,255,0.8);
+				border : solid 4px #254466;
+			}
+
+	body
+		div#sale-kaisai
+			div.padding-s#PageTop(style='background-image: url("img/summersale_bg-pattern.jpg"); background-repeat: repeat; background-size:  100%;')
+				div.wrap.padding-s
+					img.margin-bottom-xs(src='img/summersale_header.png',width="100%")
+					div
+						div.font-s.center.color-w(style='text-shadow:1px 1px 0 #0d82aa, -1px -1px 0 #0d82aa,-1px 1px 0 #0d82aa, 1px -1px 0 #0d82aa,0px 1px 0 #0d82aa,  0-1px 0 #0d82aa,-1px 0 0 #0d82aa, 1px 0 0 #0d82aa;')
+							p.margin-bottom-xs - 7月19日(金) 20:00 ～ 7月26日(金) 01:59 -
+							p インテリア・家具・家電・雑貨カテゴリの商品を10%OFF！
+							p 対象商品数は1500点以上！
+							p 気になるアイテムを要チェック！
+					
+			div#Coupon.s-padding-s(style='background:repeating-linear-gradient(-45deg, #d2f4ff 0, #d2f4ff 10px, #fff 10px, #fff 20px);}')
+				div.center
+					h2.midasi.font-l Coupon
+						p.font-xs クーポン
+				div.all-width-1-1.padding-s
+					div.grid.center
+						div.s-width-1-2.m-width-1-4.l-width-1-4
+							a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=QkhBTy1QNlZZLVFRNUUtTExFSA--&rt=', target='_top')
+								img.hover-up(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-3perc.jpg')
+						div.s-width-1-2.m-width-1-4.l-width-1-4
+							a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=RFdSVS1BSk5GLTVXUUItMUJUVA--&rt=')
+								img.hover-up(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-5perc.jpg', target='_top')
+
+				
+		div#sale-owari.padding-s(style='background:repeating-linear-gradient(-45deg, #d2f4ff 0, #d2f4ff 10px, #fff 10px, #fff 20px);}')
+			div.font-s.center.color-w(style='text-shadow:1px 1px 0 #0d82aa, -1px -1px 0 #0d82aa,-1px 1px 0 #0d82aa, 1px -1px 0 #0d82aa,0px 1px 0 #0d82aa,  0-1px 0 #0d82aa,-1px 0 0 #0d82aa, 1px 0 0 #0d82aa;')
+				p 本セールは終了しましたm(_ _)m
+				p.margin-bottom-s たくさんの方のご来店、誠に有難うございました。 
+				p メルマガにて最新情報ほか、次回セールのご案内をお届けしております。
+				p 毎日日替わりセールは引き続き実施中です！
+			div.wrap
+				div.grid.s-chwidth-1-1.m-chwidth-1-2.center
+					div
+						a.all-width-1-1.button-color-5(href='https://www.rakuten.co.jp/re-wall/news.html', target='_new') メルマガ登録はこちら(PC)
+					div
+						a.all-width-1-1.button-color-4(href='https://www.rakuten.ne.jp/gold/re-wall/timesale-page/timesale.html', target='_top') 日替わりセール会場はこちら
+
+		div(style='background: #254466; position: relative; overflow: hidden;').s-padding-s
+			img(style='width: 20%; position: absolute; top: 10%; left: 0;')(src='img/21.png')
+			img(style='width: 20%; position: absolute; top: 10%; right: 0;')(src='img/21.png')
+			div(style='position: relative;').wrap
+				div.center
+					h2.midasi.font-l.color-w 人気カテゴリ一覧
+				div(style='color: #f4dc3c;').grid-xs.center.s-chwidth-1-4.m-chwidth-1-7.l-chwidth-1-7
+					div
+						a(style='background-color: #e4f8ff;').hover-up.button-circle.margin-bottom-xs(href='#Summer', target='_top')
+							img(src='img/icon-summer.png')
+						p.font-xs 夏用アイテム
+					div
+						a(style='background-color: #e4f8ff;').hover-up.button-circle.margin-bottom-xs(href='#Chair', target='_top')
+							img(src='img/icon-chair.png')
+						p.font-xs イス・チェア
+					div
+						a(style='background-color: #e4f8ff;').hover-up.button-circle.margin-bottom-xs(href='#Mat', target='_top')
+							img(src='img/icon-mat.png')
+						p.font-xs ラグ・クッション
+					div
+						a(style='background-color: #e4f8ff;').hover-up.button-circle.margin-bottom-xs(href='#Sofa', target='_top')
+							img(src='img/icon-sofa.png')
+						p.font-xs ソファ・ベッド
+					div
+						a(style='background-color: #e4f8ff;').hover-up.button-circle.margin-bottom-xs(href='#Table', target='_top')
+							img(src='img/icon-table.png')
+						p.font-xs テーブル
+					div
+						a(style='background-color: #e4f8ff;').hover-up.button-circle.margin-bottom-xs(href='#Storage', target='_top')
+							img(src='img/icon-storage.png')
+						p.font-xs 収納家具
+					div
+						a(style='background-color: #e4f8ff;').hover-up.button-circle.margin-bottom-xs(href='#Bedding', target='_top')
+							img(src='img/icon-pillow.png')
+						p.font-xs 寝具
+
+		div(style='background:#e4f8ff; position: relative; overflow: hidden;')
+			img(style='width: 40%; position: absolute; top: 0px; left: 0px;')(src='img/38.png')
+			img(style='width: 30%; position: absolute; bottom: 80%; left: 0px;')(src='img/27.png')
+			img(style='width: 30%; position: absolute; top: 8%; right: 0px;')(src='img/19.png')
+			div.wrap.s-padding-xs.l-padding-remove
+				div.grid-s(style='position: relative;')
+					div.padding-bottom-l.s-none.m-width-1-4.l-width-1-5
+						include module/parts/sinseikatu/_Pickup
+
+							
+					div.s-width-1-1.m-width-3-4.l-width-4-5.s-chwidth-1-1
+						div#Summer
+							div.area.padding-xs.margin-bottom-s
+								div.padding-top-l.padding-bottom-l.all-width-1-1.center
+									h2.midasi.font-l Summer Goods
+										p.font-xs.color-4 オススメ夏用アイテム
+								div
+									include module/parts/sinseikatu/_Summer
+
+						div#Summer
+							div.area.padding-xs.margin-bottom-s
+								div.padding-top-l.padding-bottom-l.all-width-1-1.center
+									h2.midasi.font-l SPICE
+										p.font-xs.color-4 SPICE雑貨 期間限定送料無料
+								div
+									include module/parts/sinseikatu/_Spice
+
+							div#Chair.area.padding-xs.margin-bottom-s
+								div.padding-top-l.padding-bottom-l.all-width-1-1.center
+									h2.midasi.font-l Chair
+										p.font-xs.color-4 イス・チェア
+								div
+									include module/parts/sinseikatu/_Chair
+
+							div#Mat.area.padding-xs.margin-bottom-s
+								div.padding-top-l.padding-bottom-l.all-width-1-1.center
+									h2.midasi.font-l Rug・Mat・Cushion
+										p.font-xs.color-4 ラグ・マット・クッション
+								div
+									include module/parts/sinseikatu/_Rug
+										
+							div#Sofa.area.padding-xs.margin-bottom-s
+								div.padding-top-l.padding-bottom-l.all-width-1-1.center
+									h2.midasi.font-l Sofa・Bed
+										p.font-xs.color-4 ソファ・ベッド・ソファベッド
+								div
+									include module/parts/sinseikatu/_Sofa
+
+							div#Table.area.padding-xs.margin-bottom-s
+								div.padding-top-l.padding-bottom-l.all-width-1-1.center
+									h2.midasi.font-l Table
+										p.font-xs.color-4 テーブル
+								div
+									include module/parts/sinseikatu/_Table
+
+							div#Storage.area.padding-xs.margin-bottom-s
+								div.padding-top-l.padding-bottom-l.all-width-1-1.center
+									h2.midasi.font-l Storage
+										p.font-xs.color-4 収納家具
+								div
+									include module/parts/sinseikatu/_Storage
+									
+							div#Bedding.area.padding-xs.margin-bottom-s
+								div.padding-top-l.padding-bottom-l.all-width-1-1.center
+									h2.midasi.font-l Bedding
+										p.font-xs.color-4 寝具
+								div
+									include module/parts/sinseikatu/_Singu
+
+
+		script.
+			// スムーススクロール
+			$(function(){
+			  $('a[href^="#"]').click(function(){
+			    var speed = 500;
+			    var href= $(this).attr("href");
+			    var target = $(href == "#" || href == "" ? 'html' : href);
+			    var position = target.offset().top;
+			    $("html, body").animate({scrollTop:position}, speed, "swing");
+			    return false;
+			  });
+			});
+
+		script.
+			var date = new Date();
+			const sale_owari = new Date('2019/07/26 01:59:59');
+			if (date > sale_owari) {
+					document.getElementById('sale-kaisai').style.display = "none";
+				}
+			else {
+				document.getElementById('sale-owari').style.display = "none";
+				}
+
+		script.
+			// tab
+			var hukidasi_Classname = ['hukidasi_sankaku'];
+			
+			// tab_0
+			// 非選択状態
+			function nonestyle_0() {
+				for (var i=0; i<5; i++) {
+					document.getElementById('btn_0-'+i).classList.remove(hukidasi_Classname);
+					document.getElementById('box_0-'+i).style.display = "none";
+				}
+			}
+			nonestyle_0();
+			
+			//デフォルトで表示する項目を設定
+			document.getElementById('btn_0-0').classList.add(hukidasi_Classname);
+			document.getElementById('box_0-0').style.display = "";
+			
+			//ボタンクリックで色を変える＆要素を表示
+			//以下をタブの個数分作成し、番号を0から入力
+			document.getElementById('btn_0-0').onclick = function() {
+				nonestyle_0();
+				document.getElementById('btn_0-0').classList.add(hukidasi_Classname);
+				document.getElementById('box_0-0').style.display = "";
+			}
+			document.getElementById('btn_0-1').onclick = function() {
+				nonestyle_0();
+				document.getElementById('btn_0-1').classList.add(hukidasi_Classname);
+				document.getElementById('box_0-1').style.display = "";
+			}
+			document.getElementById('btn_0-2').onclick = function() {
+				nonestyle_0();
+				document.getElementById('btn_0-2').classList.add(hukidasi_Classname);
+				document.getElementById('box_0-2').style.display = "";
+			}
+			document.getElementById('btn_0-3').onclick = function() {
+				nonestyle_0();
+				document.getElementById('btn_0-3').classList.add(hukidasi_Classname);
+				document.getElementById('box_0-3').style.display = "";
+			}
+			document.getElementById('btn_0-4').onclick = function() {
+				nonestyle_0();
+				document.getElementById('btn_0-4').classList.add(hukidasi_Classname);
+				document.getElementById('box_0-4').style.display = "";
+			}
+			
+			// tab_1
+			// 非選択状態
+			function nonestyle_1() {
+				for (var i=0; i<5; i++) {
+					document.getElementById('btn_1-'+i).classList.remove(hukidasi_Classname);
+					document.getElementById('box_1-'+i).style.display = "none";
+				}
+			}
+			nonestyle_1();
+			
+			//デフォルトで表示する項目を設定
+			document.getElementById('btn_1-0').classList.add(hukidasi_Classname);
+			document.getElementById('box_1-0').style.display = "";
+			
+			//ボタンクリックで色を変える＆要素を表示
+			//以下をタブの個数分作成し、番号を0から入力
+			document.getElementById('btn_1-0').onclick = function() {
+				nonestyle_1();
+				document.getElementById('btn_1-0').classList.add(hukidasi_Classname);
+				document.getElementById('box_1-0').style.display = "";
+			}
+			document.getElementById('btn_1-1').onclick = function() {
+				nonestyle_1();
+				document.getElementById('btn_1-1').classList.add(hukidasi_Classname);
+				document.getElementById('box_1-1').style.display = "";
+			}
+			document.getElementById('btn_1-2').onclick = function() {
+				nonestyle_1();
+				document.getElementById('btn_1-2').classList.add(hukidasi_Classname);
+				document.getElementById('box_1-2').style.display = "";
+			}
+			document.getElementById('btn_1-3').onclick = function() {
+				nonestyle_1();
+				document.getElementById('btn_1-3').classList.add(hukidasi_Classname);
+				document.getElementById('box_1-3').style.display = "";
+			}
+			document.getElementById('btn_1-4').onclick = function() {
+				nonestyle_1();
+				document.getElementById('btn_1-4').classList.add(hukidasi_Classname);
+				document.getElementById('box_1-4').style.display = "";
+			}
+			
+			// tab_2
+			// 非選択状態
+			function nonestyle_2() {
+				for (var i=0; i<6; i++) {
+					document.getElementById('btn_2-'+i).classList.remove(hukidasi_Classname);
+					document.getElementById('box_2-'+i).style.display = "none";
+				}
+			}
+			nonestyle_2();
+			
+			//デフォルトで表示する項目を設定
+			document.getElementById('btn_2-0').classList.add(hukidasi_Classname);
+			document.getElementById('box_2-0').style.display = "";
+			
+			//ボタンクリックで色を変える＆要素を表示
+			//以下をタブの個数分作成し、番号を0から入力
+			document.getElementById('btn_2-0').onclick = function() {
+				nonestyle_2();
+				document.getElementById('btn_2-0').classList.add(hukidasi_Classname);
+				document.getElementById('box_2-0').style.display = "";
+			}
+			document.getElementById('btn_2-1').onclick = function() {
+				nonestyle_2();
+				document.getElementById('btn_2-1').classList.add(hukidasi_Classname);
+				document.getElementById('box_2-1').style.display = "";
+			}
+			document.getElementById('btn_2-2').onclick = function() {
+				nonestyle_2();
+				document.getElementById('btn_2-2').classList.add(hukidasi_Classname);
+				document.getElementById('box_2-2').style.display = "";
+			}
+			document.getElementById('btn_2-3').onclick = function() {
+				nonestyle_2();
+				document.getElementById('btn_2-3').classList.add(hukidasi_Classname);
+				document.getElementById('box_2-3').style.display = "";
+			}
+			document.getElementById('btn_2-4').onclick = function() {
+				nonestyle_2();
+				document.getElementById('btn_2-4').classList.add(hukidasi_Classname);
+				document.getElementById('box_2-4').style.display = "";
+			}
+			document.getElementById('btn_2-5').onclick = function() {
+				nonestyle_2();
+				document.getElementById('btn_2-5').classList.add(hukidasi_Classname);
+				document.getElementById('box_2-5').style.display = "";
+			}
+			
+			
+			// tab_3
+			// 非選択状態
+			function nonestyle_3() {
+				for (var i=0; i<5; i++) {
+					document.getElementById('btn_3-'+i).classList.remove(hukidasi_Classname);
+					document.getElementById('box_3-'+i).style.display = "none";
+				}
+			}
+			nonestyle_3();
+			
+			//デフォルトで表示する項目を設定
+			document.getElementById('btn_3-0').classList.add(hukidasi_Classname);
+			document.getElementById('box_3-0').style.display = "";
+			
+			//ボタンクリックで色を変える＆要素を表示
+			//以下をタブの個数分作成し、番号を0から入力
+			document.getElementById('btn_3-0').onclick = function() {
+				nonestyle_3();
+				document.getElementById('btn_3-0').classList.add(hukidasi_Classname);
+				document.getElementById('box_3-0').style.display = "";
+			}
+			document.getElementById('btn_3-1').onclick = function() {
+				nonestyle_3();
+				document.getElementById('btn_3-1').classList.add(hukidasi_Classname);
+				document.getElementById('box_3-1').style.display = "";
+			}
+			document.getElementById('btn_3-2').onclick = function() {
+				nonestyle_3();
+				document.getElementById('btn_3-2').classList.add(hukidasi_Classname);
+				document.getElementById('box_3-2').style.display = "";
+			}
+			document.getElementById('btn_3-3').onclick = function() {
+				nonestyle_3();
+				document.getElementById('btn_3-3').classList.add(hukidasi_Classname);
+				document.getElementById('box_3-3').style.display = "";
+			}
+			document.getElementById('btn_3-4').onclick = function() {
+				nonestyle_3();
+				document.getElementById('btn_3-4').classList.add(hukidasi_Classname);
+				document.getElementById('box_3-4').style.display = "";
+			}
+
+
+			// tab_4
+			// 非選択状態
+			function nonestyle_4() {
+				for (var i=0; i<7; i++) {
+					document.getElementById('btn_4-'+i).classList.remove(hukidasi_Classname);
+					document.getElementById('box_4-'+i).style.display = "none";
+				}
+			}
+			nonestyle_4();
+			
+			//デフォルトで表示する項目を設定
+			document.getElementById('btn_4-0').classList.add(hukidasi_Classname);
+			document.getElementById('box_4-0').style.display = "";
+			
+			//ボタンクリックで色を変える＆要素を表示
+			//以下をタブの個数分作成し、番号を0から入力
+			document.getElementById('btn_4-0').onclick = function() {
+				nonestyle_4();
+				document.getElementById('btn_4-0').classList.add(hukidasi_Classname);
+				document.getElementById('box_4-0').style.display = "";
+			}
+			document.getElementById('btn_4-1').onclick = function() {
+				nonestyle_4();
+				document.getElementById('btn_4-1').classList.add(hukidasi_Classname);
+				document.getElementById('box_4-1').style.display = "";
+			}
+			document.getElementById('btn_4-2').onclick = function() {
+				nonestyle_4();
+				document.getElementById('btn_4-2').classList.add(hukidasi_Classname);
+				document.getElementById('box_4-2').style.display = "";
+			}
+			document.getElementById('btn_4-3').onclick = function() {
+				nonestyle_4();
+				document.getElementById('btn_4-3').classList.add(hukidasi_Classname);
+				document.getElementById('box_4-3').style.display = "";
+			}
+			document.getElementById('btn_4-4').onclick = function() {
+				nonestyle_4();
+				document.getElementById('btn_4-4').classList.add(hukidasi_Classname);
+				document.getElementById('box_4-4').style.display = "";
+			}
+			document.getElementById('btn_4-5').onclick = function() {
+				nonestyle_4();
+				document.getElementById('btn_4-5').classList.add(hukidasi_Classname);
+				document.getElementById('box_4-5').style.display = "";
+			}
+			document.getElementById('btn_4-6').onclick = function() {
+				nonestyle_4();
+				document.getElementById('btn_4-6').classList.add(hukidasi_Classname);
+				document.getElementById('box_4-6').style.display = "";
+			}
+			
+
+
+			// tab_5
+			// 非選択状態
+			function nonestyle_5() {
+				for (var i=0; i<4; i++) {
+					document.getElementById('btn_5-'+i).classList.remove(hukidasi_Classname);
+					document.getElementById('box_5-'+i).style.display = "none";
+				}
+			}
+			nonestyle_5();
+			
+			//デフォルトで表示する項目を設定
+			document.getElementById('btn_5-0').classList.add(hukidasi_Classname);
+			document.getElementById('box_5-0').style.display = "";
+			
+			//ボタンクリックで色を変える＆要素を表示
+			//以下をタブの個数分作成し、番号を0から入力
+			document.getElementById('btn_5-0').onclick = function() {
+				nonestyle_5();
+				document.getElementById('btn_5-0').classList.add(hukidasi_Classname);
+				document.getElementById('box_5-0').style.display = "";
+			}
+			document.getElementById('btn_5-1').onclick = function() {
+				nonestyle_5();
+				document.getElementById('btn_5-1').classList.add(hukidasi_Classname);
+				document.getElementById('box_5-1').style.display = "";
+			}
+			document.getElementById('btn_5-2').onclick = function() {
+				nonestyle_5();
+				document.getElementById('btn_5-2').classList.add(hukidasi_Classname);
+				document.getElementById('box_5-2').style.display = "";
+			}
+			document.getElementById('btn_5-3').onclick = function() {
+				nonestyle_5();
+				document.getElementById('btn_5-3').classList.add(hukidasi_Classname);
+				document.getElementById('box_5-3').style.display = "";
+			}
+
+			// tab_6
+			// 非選択状態
+			function nonestyle_6() {
+				for (var i=0; i<4; i++) {
+					document.getElementById('btn_6-'+i).classList.remove(hukidasi_Classname);
+					document.getElementById('box_6-'+i).style.display = "none";
+				}
+			}
+			nonestyle_6();
+			
+			//デフォルトで表示する項目を設定
+			document.getElementById('btn_6-0').classList.add(hukidasi_Classname);
+			document.getElementById('box_6-0').style.display = "";
+			
+			//ボタンクリックで色を変える＆要素を表示
+			//以下をタブの個数分作成し、番号を0から入力
+			document.getElementById('btn_6-0').onclick = function() {
+				nonestyle_6();
+				document.getElementById('btn_6-0').classList.add(hukidasi_Classname);
+				document.getElementById('box_6-0').style.display = "";
+			}
+			document.getElementById('btn_6-1').onclick = function() {
+				nonestyle_6();
+				document.getElementById('btn_6-1').classList.add(hukidasi_Classname);
+				document.getElementById('box_6-1').style.display = "";
+			}
+			document.getElementById('btn_6-2').onclick = function() {
+				nonestyle_6();
+				document.getElementById('btn_6-2').classList.add(hukidasi_Classname);
+				document.getElementById('box_6-2').style.display = "";
+			}
+			document.getElementById('btn_6-3').onclick = function() {
+				nonestyle_6();
+				document.getElementById('btn_6-3').classList.add(hukidasi_Classname);
+				document.getElementById('box_6-3').style.display = "";
+			}

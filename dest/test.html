@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+		<link href="./assets/img/favicon/favicon.ico" rel="icon" type="image/x-icon">
+		<link href="./assets/img/favicon/icon.png" rel="apple-touch-icon" sizes="180x180">
+		<link href="./assets/css/reset.min.css" rel="stylesheet">
+		<link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" rel="stylesheet">
+		<script src="https://www.rakuten.ne.jp/gold/re-wall/js/jquery.js"></script>
+		<link href="./assets/css/style.min.css" rel="stylesheet">
+		<title>テストページ</title>
+		<style>
+			.square {
+				pointer-events: none;
+				width: 28px;
+				height: 28px;
+				margin: 1px;
+				font-size: 12px;
+			}
+			.el{
+				background-color :#000;
+			}
+			
+			.shadow {
+				position: absolute;
+				opacity: .2;
+			}
+			
+		</style>
+	</head>
+	<body><div id="nodeList">
+<div class="line">
+<div class="square shadow"></div>
+<div class="square el"></div>
+</div>
+<div class="line">
+<div class="square shadow"></div>
+<div class="square el"></div>
+</div>
+<div class="line">
+<div class="square shadow"></div>
+<div class="square el"></div>
+</div>
+</div>
+<input class="progress" step=".001" type="range" min="0" max="100" value="0">
+		<script src="./assets/js/anime.min.js"></script>
+		<script>
+			document.getElementById('nodeList').addEventListener('click',function() {
+			
+				//移動アニメーション
+				anime({
+					targets: '#nodeList .el',
+					translateX: 250,
+					direction: 'alternate',
+					delay: function(el, i, l) {
+						return i * 100;
+					},
+					endDelay: function(el, i, l) {
+						return (l - i) * 100;
+					}					
+				});
+			});
+		</script>
+	</body>
+</html>

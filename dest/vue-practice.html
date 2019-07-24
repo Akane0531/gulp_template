@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<body>
+		<div id="hello">
+			<h1>{{ message }}</h1>
+		</div>
+		<div id="tab">
+			<div class="tab_box">
+				<ul class="tab_list">
+					<li>タブ1</li>
+					<li>タブ2</li>
+					<li>タブ3</li>
+				</ul>
+				<ul class="tab_contents">
+					<li>テキスト1</li>
+					<li>テキスト2</li>
+					<li>テキスト3</li>
+				</ul>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+			    el: '#hello',
+			    data: {
+			      message: 'Hello Vue.js!'
+			    }
+			  })
+			  
+			new Vue({
+			  el: '#tab',
+			  data: {
+			    isActive: '1'
+			  },
+			  methods: {
+			    change: function(num){
+			      this.isActive = num
+			    }
+			  }
+			})
+		</script>
+	</body>
+</html>

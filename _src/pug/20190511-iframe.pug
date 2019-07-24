@@ -1,0 +1,69 @@
+doctype html
+
+include base/_config
+include module/parts/_timesale-id
+
+html(lang="ja")
+	head
+		include module/common/_head
+		style.
+			/* html{
+				background-color:#b2b2b2;
+			}
+			.wrap{
+				background-color:#f5f5f5;
+			} */
+
+	body
+		div.padding-s#PageTop(style='background-image: url("img/summersale_bg.jpg"); background-repeat: no-repeat; background-size:  100%; border-bottom: solid 4px #13547a;')
+			div.wrap.center
+				a(href='https://www.rakuten.ne.jp/gold/re-wall/timesale-page/sinseikatu.html', target='_top')
+					img.hover-huwahuwa(src='img/summersale_header.png',width="100%")
+				a.button-color-4(href='https://www.rakuten.ne.jp/gold/re-wall/timesale-page/sinseikatu.html', target='_top') サマーセール会場はコチラ
+					
+		div(style='background-image: url("img/bgimg-01.jpg"); background-repeat: repeat-x;')
+			
+			div.padding-top-l.center
+				h2.midasi.font-l Campaign
+					p.font-xs.color-4 キャンペーン情報
+			div.all-width-1-1.padding-s.margin-bottom-l
+				div.grid.center
+					div.s-width-1-2.m-width-1-4.l-width-1-4
+						a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=R0M2TC1UTk5OLUFPREYtVVlFNA--&rt=', target='_top')
+							img.hover-up(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-3perc.jpg')
+					div.s-width-1-2.m-width-1-4.l-width-1-4
+						a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=OTZBQi01UjhLLVJIMlgtUFM2Ug--&rt=')
+							img.hover-up(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-5perc.jpg', target='_top')
+
+		//- div#Sale.wrap.padding-bottom-l
+			div.all-width-1-1.center
+				h2.midasi.font-l Sale
+					p.font-xs.color-4 今日のセール商品
+			include module/parts/_timesale-Now
+						
+		div.margin-bottom-m.all-width-1-1.center
+			a.button-color-4(href='https://www.rakuten.ne.jp/gold/re-wall/timesale-page/timesale.html', target='_top') オトクなセール情報ページはこちら
+								
+		script.
+			// tab
+			// tabCountにタブの個数を入力
+			var tabCount = 7;
+			var Day = new Date().getDay();
+			
+			for (var i=0; i<tabCount; i++) {
+				document.getElementById("timesale_"+i).style.display = "none";
+			}			
+			document.getElementById("timesale_"+Day).style.display = "";
+		
+		script.
+			// スムーススクロール
+			$(function(){
+			  $('a[href^="#"]').click(function(){
+			    var speed = 500;
+			    var href= $(this).attr("href");
+			    var target = $(href == "#" || href == "" ? 'html' : href);
+			    var position = target.offset().top;
+			    $("html, body").animate({scrollTop:position}, speed, "swing");
+			    return false;
+			  });
+			});

@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+// color
+// --------------------------------------------------------------------
+
+$categoryColors:(
+  color-w: #fff,
+  color-b: #{$TEXT_COLOR},
+  color-1: #{$SUB_COLOR-1},
+  color-2: #{$SUB_COLOR-2},
+  color-3: #{$SUB_COLOR-3},
+  color-4: #{$SUB_COLOR-4},
+  color-5: #{$SUB_COLOR-5},
+  color-6: #{$SUB_COLOR-6},
+  color-7: #{$SUB_COLOR-7},
+);
+
+$categoryColors_Lighten:(
+  color-1: #{lighten($SUB_COLOR-1, 30%)},
+  color-2: #{lighten($SUB_COLOR-2, 30%)},
+  color-3: #{lighten($SUB_COLOR-3, 30%)},
+  color-4: #{lighten($SUB_COLOR-4, 30%)},
+  color-5: #{lighten($SUB_COLOR-5, 30%)},
+  color-6: #{lighten($SUB_COLOR-6, 30%)},
+  color-7: #{lighten($SUB_COLOR-7, 30%)},
+);
+
+@each $category, $color in $categoryColors {
+  .#{$category},.#{$category}-hover:hover {
+    color: $color;
+  }
+  .bg#{$category},.bg#{$category}-hover:hover,.bg#{$category}-hover:active {
+    background-color: $color;
+  }
+  .hukidasi-#{$category}::after {
+    border-color: $color transparent transparent transparent;
+  }
+}
+
+@each $category, $color in $categoryColors_Lighten {
+  .#{$category}-l {
+    color: $color;
+  }
+  .bg#{$category}-l,.bg#{$category}-l-hover:hover,.bg#{$category}-l-hover:active {
+    background-color: $color;
+  }
+  .hukidasi-#{$category}-l::after {
+    border-color: $color transparent transparent transparent;
+  }
+}

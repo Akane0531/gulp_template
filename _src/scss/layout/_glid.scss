@@ -1,0 +1,207 @@
+@charset "utf-8";
+
+$glidLists:(
+  xs: #{$SIZE_XS},
+  s: #{$SIZE_S},
+  m: #{$SIZE_M},
+  l: #{$SIZE_L},
+  xl: #{$SIZE_XL}
+);
+
+
+@each $size, $glid in $glidLists {
+  .grid-#{$size} {
+    display: flex;
+    /* 1 */
+    flex-wrap: wrap;
+    /* 2 */
+    margin: 0;
+    margin-left: -#{$glid};
+    padding: 0;
+    list-style: none;
+  	> * {
+  	  margin: 0;
+  		padding-left: $glid;
+  		margin-top: $glid;
+  	}
+  }
+}
+
+.grid-none {
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+  /* 2 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  > * {
+    margin: 0;
+    padding-left: 0;
+    margin-top: 0;
+  }
+  margin-left: 0;
+}
+
+.grid {
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+  /* 2 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+	> * {
+	  margin: 0;
+		padding-left: 16px;
+		margin-top: 16px;
+	}
+	margin-left: -16px;
+}
+
+.center{
+	text-align: center;
+	justify-content: center;
+	.center > *{
+		text-align: center;
+	}
+
+}
+.flex-center{
+	flex-direction: row;
+}
+
+.right{
+	text-align: right;
+	.right > *{
+		text-align: right;
+	}
+
+}
+
+
+@media (min-width: $BREACKPOINT_SP){
+	@for $i from 1 through 8 {
+		.s-width-1-#{$i},.s-chwidth-1-#{$i} > * {
+			width: 100% / $i;
+		}
+	}
+	.s-width-1-3,.s-chwidth-1-3 > * {
+		width: 100% / 3;
+	}
+	.s-width-2-3,.s-chwidth-2-3 > * {
+		width: (100% / 3)*2;
+	}
+	.s-width-3-4,.s-chwidth-3-4 > * {
+		width: (100% / 4)*3;
+	}
+	.s-width-4-5,.s-chwidth-4-5 > * {
+		width: (100% / 5)*4;
+	}
+	.s-width-5-6,.s-chwidth-5-6 > * {
+		width: (100% / 6)*5;
+	}
+}
+@media (min-width: $BREACKPOINT_TB){
+	@for $i from 1 through 8 {
+		.m-width-1-#{$i},.m-chwidth-1-#{$i} > * {
+			width: 100% / $i;
+		}
+	}
+	.m-width-1-3,.m-chwidth-1-3 > * {
+		width: 100% / 3;
+	}
+	.m-width-2-3,.m-chwidth-2-3 > * {
+		width: (100% / 3)*2;
+	}
+	.m-width-3-4,.m-chwidth-3-4 > * {
+		width: (100% / 4)*3;
+	}
+  .m-width-4-5,.m-chwidth-4-5 > * {
+    width: (100% / 5)*4;
+  }
+	.m-width-5-6,.m-chwidth-5-6 > * {
+		width: (100% / 6)*5;
+	}
+}
+@media (min-width: $BREACKPOINT_PC){
+	@for $i from 1 through 8 {
+		.l-width-1-#{$i},.l-chwidth-1-#{$i} > * {
+			width: 100% / $i;
+		}
+	}
+	.l-width-1-3,.l-chwidth-1-3 > * {
+		width: 100% / 3;
+	}
+	.l-width-2-3,.l-chwidth-2-3 > * {
+		width: (100% / 3)*2;
+	}
+	.l-width-3-4,.l-chwidth-3-4 > * {
+		width: (100% / 4)*3;
+	}
+  .l-width-4-5,.l-chwidth-4-5 > * {
+    width: (100% / 5)*4;
+  }
+	.l-width-5-6,.l-chwidth-5-6 > * {
+		width: (100% / 6)*5;
+	}
+}
+
+@media (min-width: 0px){
+	@for $i from 1 through 8 {
+		.all-width-1-#{$i},.all-chwidth-1-#{$i} > * {
+			width: 100% / $i;
+		}
+	}
+	.all-width-1-3,.all-chwidth-1-3 > * {
+		width: 100% / 3;
+	}
+	.all-width-2-3,.all-chwidth-2-3 > * {
+		width: (100% / 3)*2;
+	}
+	.all-width-3-4,.all-chwidth-3-4 > * {
+		width: (100% / 4)*3;
+	}
+  .all-width-4-5,.all-chwidth-4-5 > * {
+    width: (100% / 5)*4;
+  }
+	.all-width-5-6,.all-chwidth-5-6 > * {
+		width: (100% / 6)*5;
+	}
+}
+
+
+
+// 表示・非表示
+// ------------------------------------------------------------------------
+
+@media (min-width: $BREACKPOINT_SP) and (max-width: -1+$BREACKPOINT_TB){
+  .s-none{
+    display: none;
+  }
+}
+@media (min-width: $BREACKPOINT_TB) and (max-width: -1+$BREACKPOINT_PC){
+  .m-none{
+    display: none;
+  }
+}
+@media (min-width: $BREACKPOINT_PC){
+  .l-none{
+    display: none;
+  }
+}
+
+
+
+// ------------------------------------------------------------------------
+
+@media (max-width: -1+ $BREACKPOINT_TB){
+	.columns {
+		flex-direction: column;
+	}
+	@for $i from 1 through 10 {
+		.order#{$i} {
+			order: $i;
+		}
+	}
+}

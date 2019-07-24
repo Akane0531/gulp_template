@@ -1,0 +1,11 @@
+div.grid.s-chwidth-1-2.m-chwidth-1-4.l-chwidth-1-5
+	-for (var i=0; i<osusumesale.length; i++)
+		div.margin-bottom-s
+			div.bgcolor-5-l.shadow.hover-up
+				a(href='https://item.rakuten.co.jp/re-wall/'+osusumesale[i]['code']+'/', target='_top')
+					img(src=''+osusumesale[i]['img']+'')
+				p.padding-xs.color-5 #{osusumesale[i]['price_b']}円
+					span.font-xs (税込)
+				//- div.center
+					a(href='https://item.rakuten.co.jp/re-wall/'+osusumesale[i]['code']+'/', target='_top').button.bgcolor-1.bgcolor-5-hover.font-xs 商品ページへ
+						i.fas.fa-shopping-cart

@@ -1,0 +1,217 @@
+doctype html
+
+include base/_config
+include module/parts/_timesale-id
+
+html(lang="ja")
+	head
+		include module/common/_head
+		style.
+			/* html{
+				background-color:#b2b2b2;
+			}
+			.wrap{
+				background-color:#f5f5f5;
+			} */
+
+	body
+		div#PageTop.bgcolor-1-l
+			img(src='https://image.rakuten.co.jp/re-wall/cabinet/special/header.jpg',width="100%")
+			
+		div.wrap.padding-bottom-l
+			// ページ内リンク
+			div.wrap.m-width-5-6
+				div.grid.s-chwidth-1-2.m-chwidth-1-4.l-chwidth-1-4.center
+					a(href='#Campaign')
+						div(style='background-color:#f6f6f6;').padding-top-s.padding-bottom-s.bgcolor-1-hover
+							i.fas.fa-ticket-alt.font-l
+							h2 キャンペーン情報
+							h3.margin-bottom-s Campaign
+							.hukidasi_sankaku.hukidasi-color-1.hukidasi-xs
+					a(href='#Sale')
+						div.padding-top-s.padding-bottom-s(style='background-color:#f6f6f6;')
+							i.far.fa-calendar-check.font-l
+							h2 今日のセール
+							h3.margin-bottom-s Sale
+							.hukidasi_sankaku.hukidasi-color-5.hukidasi-xs
+					a(href='#Schedule')
+						div.padding-top-s.padding-bottom-s(style='background-color:#f6f6f6;')
+							i.far.fa-calendar-check.font-l
+							h2 セールスケジュール
+							h3.margin-bottom-s Schedule
+							.hukidasi_sankaku.hukidasi-color-7.hukidasi-xs
+					a(href='#Others')
+						div.padding-top-s.padding-bottom-s(style='background-color:#f6f6f6;')
+							i.far.fa-check-square.font-l
+							h2 その他オススメ商品
+							h3.margin-bottom-s Others
+							.hukidasi_sankaku.hukidasi-color-3.hukidasi-xs
+								
+				// オトクな情報1~3				
+				div.grid.s-chwidth-1-1.m-chwidth-1-3.center
+					div
+						img(src='img/timesale-img01.png')
+					div
+						img(src='img/timesale-img02.png')
+					div
+						img(src='img/timesale-img03.png')
+
+				//- // オトクな情報1~3				
+				//- div.grid.s-chwidth-1-1.center
+				//- 	div.m-width-2-3.order2
+				//- 		div(style='background-color:#999; height:100%;')
+				//- 			h2 キャンペーン情報
+				//- 			h3 Campaign
+				//- 	.m-width-1-3.order1
+				//- 		img(src='img/timesale-img01.png')
+				//- div.grid.s-chwidth-1-1.center
+				//- 	.m-width-1-3
+				//- 		img(src='img/timesale-img02.png')
+				//- 	div.m-width-2-3
+				//- 		div(style='background-color:#999; height:100%;')
+				//- 			h2 キャンペーン情報
+				//- 			h3 Campaign
+				//- div.grid.s-chwidth-1-1.center
+				//- 	div.m-width-2-3.order2
+				//- 		div(style='background-color:#999; height:100%;')
+				//- 			h2 キャンペーン情報
+				//- 			h3 Campaign
+				//- 	.m-width-1-3.order1
+				//- 		img(src='img/timesale-img03.png')
+						
+		div#Campaign.bgcolor-1-l.padding-top-l.padding-bottom-l.center.hukidasi_sankaku.hukidasi-color-1-l
+			p.button.bgcolor-5.margin-bottom-m Check!
+			h2.font-s セール情報をチェックしてオトクにアイテムGET!
+			
+		div.padding-s#PageTop(style='background-image: url("img/summersale_bg.jpg"); background-repeat: no-repeat; background-size:  100%; border-bottom: solid 4px #13547a;')
+			div.wrap
+				a(href='https://www.rakuten.ne.jp/gold/re-wall/timesale-page/sinseikatu.html', target='_top')
+					img(src='img/summersale_header.png',width="100%")
+			
+		div(style='background-image: url("img/bgimg-01.jpg"); background-repeat: repeat-x;')
+			
+			div.padding-top-xl.center
+				h2.midasi.font-l Campaign
+					p.font-xs.color-4 キャンペーン情報
+			div.all-width-1-1.padding-s.margin-bottom-l
+				div.grid.center
+					div.s-width-1-2.m-width-1-4.l-width-1-4
+						a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=R0M2TC1UTk5OLUFPREYtVVlFNA--&rt=', target='_top')
+							img(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-3perc.jpg')
+					div.s-width-1-2.m-width-1-4.l-width-1-4
+						a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=OTZBQi01UjhLLVJIMlgtUFM2Ug--&rt=')
+							img(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-5perc.jpg', target='_top')
+
+		div#Sale.wrap.padding-bottom-l
+			div.padding-top-l.padding-bottom-l.all-width-1-1.center
+				h2.midasi.font-l Sale
+					p.font-xs.color-4 今日のセール商品	
+			include module/parts/_timesale-Now
+
+		//- div.wrap.padding-bottom-l
+			div.padding-top-l.padding-bottom-l.all-width-1-1.center
+				h2.midasi.font-l Special Sale
+					p.font-xs.color-4 期間限定！10%OFFセール対象商品<br>5/26 23:59まで！
+			include module/parts/_marathon-item
+
+		div#Schedule.wrap.padding-bottom-l
+			div.padding-top-l.padding-bottom-l.all-width-1-1.center
+				h2.midasi.font-l Schedule
+					p.font-xs.color-4 日替わりセールスケジュール
+			include module/parts/_timesale-Schedule
+
+									
+		div#Others.wrap.padding-bottom-l
+			div.padding-top-l.padding-bottom-l.all-width-1-1.center
+				h2.midasi.font-l Others
+					p.font-xs.color-4 その他売れ筋商品
+			include module/parts/_osusume-item
+			
+		div.center.padding-m
+			a(style='width: 100%;', href='#PageTop') - Topへ -
+		
+									
+		script.
+			// tab
+			// tabCountにタブの個数を入力
+			var tabCount = 7;
+			var btn_Idname = 'btn_';
+			var box_Idname = 'box_';
+			var color_Classname = 'bgcolor-';
+			var btn_Idname_list = [];
+			var box_Idname_list = [];
+			var color_Classname_list = [];
+			for (var i=0; i<tabCount; i++) {
+				btn_Idname_list.push(btn_Idname+i);
+				box_Idname_list.push(box_Idname+i);
+				color_Classname_list.push(color_Classname+(i+1)+"-l");
+				}
+			// 非選択状態
+			function nonestyle() {
+				for (var i=0; i<tabCount; i++) {
+					document.getElementById(btn_Idname_list[i]).classList.add(color_Classname_list[i]);
+					document.getElementById(box_Idname_list[i]).style.display = "none";
+				}
+			}
+			nonestyle();
+			//デフォルトで表示する項目を設定
+			var Day = new Date().getDay();
+			document.getElementById(btn_Idname_list[Day]).classList.remove(color_Classname_list[Day]);
+			document.getElementById(box_Idname_list[Day]).style.display = "";
+			
+			//ボタンクリックで色を変える＆要素を表示
+			//以下をタブの個数分作成し、番号を0から入力
+			document.getElementById(btn_Idname_list[0]).onclick = function() {
+				nonestyle();
+				document.getElementById(btn_Idname_list[0]).classList.remove(color_Classname_list[0]);
+				document.getElementById(box_Idname_list[0]).style.display = "";
+			}
+			document.getElementById(btn_Idname_list[1]).onclick = function() {
+				nonestyle();
+				document.getElementById(btn_Idname_list[1]).classList.remove(color_Classname_list[1]);
+				document.getElementById(box_Idname_list[1]).style.display = "";
+			}
+			document.getElementById(btn_Idname_list[2]).onclick = function() {
+				nonestyle();
+				document.getElementById(btn_Idname_list[2]).classList.remove(color_Classname_list[2]);
+				document.getElementById(box_Idname_list[2]).style.display = "";
+			}
+			document.getElementById(btn_Idname_list[3]).onclick = function() {
+				nonestyle();
+				document.getElementById(btn_Idname_list[3]).classList.remove(color_Classname_list[3]);
+				document.getElementById(box_Idname_list[3]).style.display = "";
+			}
+			document.getElementById(btn_Idname_list[4]).onclick = function() {
+				nonestyle();
+				document.getElementById(btn_Idname_list[4]).classList.remove(color_Classname_list[4]);
+				document.getElementById(box_Idname_list[4]).style.display = "";
+			}
+			document.getElementById(btn_Idname_list[5]).onclick = function() {
+				nonestyle();
+				document.getElementById(btn_Idname_list[5]).classList.remove(color_Classname_list[5]);
+				document.getElementById(box_Idname_list[5]).style.display = "";
+			}
+			document.getElementById(btn_Idname_list[6]).onclick = function() {
+				nonestyle();
+				document.getElementById(btn_Idname_list[6]).classList.remove(color_Classname_list[6]);
+				document.getElementById(box_Idname_list[6]).style.display = "";
+			}			
+			
+			// セールではない商品を非表示に
+			for (var i=0; i<tabCount; i++) {
+				document.getElementById("timesale_"+i).style.display = "none";
+			}			
+			document.getElementById("timesale_"+Day).style.display = "";
+		
+		script.
+			// スムーススクロール
+			$(function(){
+			  $('a[href^="#"]').click(function(){
+			    var speed = 500;
+			    var href= $(this).attr("href");
+			    var target = $(href == "#" || href == "" ? 'html' : href);
+			    var position = target.offset().top;
+			    $("html, body").animate({scrollTop:position}, speed, "swing");
+			    return false;
+			  });
+			});

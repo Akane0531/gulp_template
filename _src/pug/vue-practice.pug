@@ -1,0 +1,37 @@
+doctype html
+html(lang="ja")
+  body
+    #hello
+      h1 {{ message }}
+    #tab
+      div.tab_box
+        ul.tab_list
+          li タブ1
+          li タブ2
+          li タブ3
+        ul.tab_contents
+          li テキスト1
+          li テキスト2
+          li テキスト3
+      
+  
+    script(src='https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js')
+    script.
+      var app = new Vue({
+          el: '#hello',
+          data: {
+            message: 'Hello Vue.js!'
+          }
+        })
+        
+      new Vue({
+        el: '#tab',
+        data: {
+          isActive: '1'
+        },
+        methods: {
+          change: function(num){
+            this.isActive = num
+          }
+        }
+      })

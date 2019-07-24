@@ -1,0 +1,92 @@
+doctype html
+
+include base/_config
+include module/parts/timesale/_timesale-201907
+
+html(lang="ja")
+	head
+		include module/common/_head
+		link(href= paths.css + "style.min.css", rel="stylesheet")
+		title 壁紙のトキワ Rewall | 日替わりタイムセール会場
+		style.
+
+	body.bgcolor-w
+		div.wrap
+			//- div.box-dashed-color-4.margin-s.padding-s
+				p.font-xs 2019/07/04
+				p.color-4.bold ▲配達見合わせのお知らせ
+				p.font-s 現在、九州南部を中心とした大雨の影響により、配達見合わせの地域がございます。
+				p.font-s.margin-bottom-xs ご不便をおかけいたしますが、ご理解の程お願い申し上げます。
+				p.color-4 対象地域:鹿児島県(全域)、宮崎県(北諸県郡)、熊本県(球磨郡)
+				p.font-xs ※対象地域付近の地域も配達に伺うことが出来ない場合がございます。
+				
+		div#sale-owari
+			div#Sale.wrap.padding-bottom-l
+				div.all-width-1-1.center
+					h2.midasi.font-l Sale
+						p.font-xs.color-4 今日のセール商品
+				include module/parts/timesale/_timesale-Now
+
+				div.grid.s-chwidth-1-1.m-chwidth-1-2.center
+					div
+						a.all-width-1-1.button-color-5(href='https://www.rakuten.co.jp/re-wall/news.html', target='_new') メルマガ登録はこちら(PC)
+					div
+						a.all-width-1-1.button-color-4(href='https://www.rakuten.ne.jp/gold/re-wall/timesale-page/timesale.html', target='_top') 日替わりセール会場はこちら
+
+
+		div#sale-kaisai
+			div.padding-s#PageTop(style='background-image: url("img/summersale_bg-pattern.jpg"); background-repeat:repeat; background-size:  100%; border-bottom: solid 4px #13547a;')
+				div.wrap
+					a(href='https://www.rakuten.ne.jp/gold/re-wall/timesale-page/sinseikatu_new.html', target='_top')
+						img.hover-huwahuwa(src='img/summersale_header.png',width="100%")
+			div(style='background-image: url("img/bgimg-01.jpg"); background-repeat: repeat-x;')
+				div.padding-top-l.center
+					h2.midasi.font-l Campaign
+						p.font-xs.color-4 キャンペーン情報
+				div.all-width-1-1.padding-s.margin-bottom-l
+					div.grid.center
+						div.s-width-1-2.m-width-1-4.l-width-1-4
+							a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=QkhBTy1QNlZZLVFRNUUtTExFSA--&rt=', target='_top')
+								img.hover-up(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-3perc.jpg')
+						div.s-width-1-2.m-width-1-4.l-width-1-4
+							a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=RFdSVS1BSk5GLTVXUUItMUJUVA--&rt=')
+								img.hover-up(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-5perc.jpg', target='_top')
+
+					div.wrap.margin-bottom-s
+						div.grid.s-chwidth-1-1.m-chwidth-1-2.center
+							div
+								a.all-width-1-1.button-color-5(href='https://www.rakuten.co.jp/re-wall/news.html', target='_new') メルマガ登録はこちら(PC)
+							div
+								a.all-width-1-1.button-color-4(href='https://www.rakuten.ne.jp/gold/re-wall/timesale-page/timesale.html', target='_top') 日替わりセール会場はこちら
+
+
+		script.
+			var date = new Date();
+			var sale_owari = new Date('2019/07/26 01:59:59');
+			if (date > sale_owari) {
+					document.getElementById('sale-kaisai').style.display = "none";
+				}
+			else {
+				document.getElementById('sale-owari').style.display = "none";
+				}
+
+		script.
+			var tabCount = 7;
+			var Day = new Date().getDay();
+			// セールではない商品を非表示に
+			for (var i=0; i<tabCount; i++) {
+				document.getElementById("timesale_"+i).style.display = "none";
+			}
+			document.getElementById("timesale_"+Day).style.display = "";
+		script.
+			// スムーススクロール
+			$(function(){
+			  $('a[href^="#"]').click(function(){
+			    var speed = 500;
+			    var href= $(this).attr("href");
+			    var target = $(href == "#" || href == "" ? 'html' : href);
+			    var position = target.offset().top;
+			    $("html, body").animate({scrollTop:position}, speed, "swing");
+			    return false;
+			  });
+			});

@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+// color
+// --------------------------------------------------------------------
+
+.button{
+  display: inline-block;
+  transition: 0.1s ease-in-out;
+  text-align: center;
+  color: #fff;
+  padding: 8px;
+}
+
+
+@each $category, $color in $categoryColors {
+  .button-#{$category} {
+    display: inline-block;
+    background-color: #fff;
+    color: $color;
+    border: solid 4px $color;
+    padding: 8px;
+    transition: 0.1s ease-in-out;
+    &:hover,&:active{
+      background-color: $color;
+      color: #fff;
+    }
+    &[class*="check"]:before {
+      content: '\f058';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 1em;
+    }
+    &[class*="mail"]:before {
+      content: '\f0e0';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 1em;
+    }
+  }
+  *[class*="button-#{$category} active"]{
+    background-color: $color;
+    color: #fff;
+  }
+  .box-solid-#{$category} {
+    display: inline-block;
+    overflow: hidden;
+    border: solid 1px $color;
+    border-radius: 8px;
+  }
+  .box-dashed-#{$category} {
+    overflow: hidden;
+    border: dashed 2px $color;
+  }
+}
+
+.button-circle{
+  display: inline-block;
+  transition: 0.1s ease-in-out;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  padding: 8px;
+  line-height: 1em;
+}
+
+
+$hukidasiLists:(
+  xs: #{$SIZE_XS},
+  s: #{$SIZE_S},
+  m: #{$SIZE_M},
+  l: #{$SIZE_L},
+  xl: #{$SIZE_XL}
+);
+
+.hukidasi_sankaku{
+  position: relative;
+}
+
+.hukidasi_sankaku::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -32px;
+  left: 0;
+  width: 0px;
+  height: 0px;
+  margin: auto;
+  border-style: solid;
+  border-width: 32px 32px 0 32px;
+}
+
+
+@each $size, $hukidasi in $hukidasiLists {
+  .hukidasi-#{$size}::after {
+    bottom: -$hukidasi;
+    border-width: $hukidasi $hukidasi 0 $hukidasi;
+  }
+
+
+}

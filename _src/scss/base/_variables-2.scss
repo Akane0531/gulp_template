@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+// break points
+// ------------------------------------------------------------------------
+$BREACKPOINT_PC: 960px;
+$BREACKPOINT_TB: 600px;
+$BREACKPOINT_SP: 0px;
+
+// path
+// ------------------------------------------------------------------------
+$PATH_IMG: "../img/";
+
+// size
+// ------------------------------------------------------------------------
+$SIZE_XS: 4px;
+$SIZE_S: 10px;
+$SIZE_M: 16px;
+$SIZE_L: 24px;
+$SIZE_XL: 32px;
+
+
+// base color
+// ------------------------------------------------------------------------
+$BASE_COLOR: #4d6e9c;
+
+// text color
+// ------------------------------------------------------------------------
+$TEXT_COLOR: #333;
+
+// color variation
+// ------------------------------------------------------------------------
+
+$SUB_COLOR-1: #99ced4;
+$SUB_COLOR-2: #e14658;
+$SUB_COLOR-3: #6e7376;
+$SUB_COLOR-4: adjust-hue($BASE_COLOR, 180deg);
+$SUB_COLOR-5: adjust-hue($BASE_COLOR, 225deg);
+$SUB_COLOR-6: adjust-hue($BASE_COLOR, 270deg);
+$SUB_COLOR-7: adjust-hue($BASE_COLOR, 315deg);
+
+
+// wrap
+// ------------------------------------------------------------------------
+$WRAP_WIDTH: 960px;
+
+.wrap{
+  width: $WRAP_WIDTH;
+  max-width: 94%;
+  margin: 0 auto;
+}
+
+// wrap
+// ------------------------------------------------------------------------
+canvas,
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+hr {
+  margin: 0;
+  border: 1px dashed #ccc;
+}
+.hr-2 {
+  border: 1px solid $SUB_COLOR-1;
+}
+
+
+.link:hover{
+  text-decoration: underline;
+}

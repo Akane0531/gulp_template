@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+// break points
+// ------------------------------------------------------------------------
+$BREACKPOINT_PC: 960px;
+$BREACKPOINT_TB: 600px;
+$BREACKPOINT_SP: 0px;
+
+// path
+// ------------------------------------------------------------------------
+$PATH_IMG: "../img/";
+
+// size
+// ------------------------------------------------------------------------
+$SIZE_XS: 8px;
+$SIZE_S: 16px;
+$SIZE_M: 24px;
+$SIZE_L: 32px;
+$SIZE_XL: 64px;
+
+
+// base color
+// ------------------------------------------------------------------------
+$BASE_COLOR: #72cfc7;
+
+// text color
+// ------------------------------------------------------------------------
+$TEXT_COLOR: #333;
+
+// color variation
+// ------------------------------------------------------------------------
+
+$SUB_COLOR-1: adjust-hue($BASE_COLOR, 45deg);
+$SUB_COLOR-2: adjust-hue($BASE_COLOR, 90deg);
+$SUB_COLOR-3: adjust-hue($BASE_COLOR, 135deg);
+$SUB_COLOR-4: adjust-hue($BASE_COLOR, 180deg);
+$SUB_COLOR-5: adjust-hue($BASE_COLOR, 225deg);
+$SUB_COLOR-6: adjust-hue($BASE_COLOR, 270deg);
+$SUB_COLOR-7: adjust-hue($BASE_COLOR, 315deg);
+
+
+// wrap
+// ------------------------------------------------------------------------
+$WRAP_WIDTH: 960px;
+
+.wrap{
+  width: $BREACKPOINT_PC;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+// wrap
+// ------------------------------------------------------------------------
+canvas,
+img,
+video {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+body, a{
+	color: $TEXT_COLOR;
+}
+
+a > img:hover {
+  opacity: .8;
+}
+
+hr {
+  margin: 0;
+  border: 2px solid #fff;
+}
+.hr-2 {
+  border: 1px solid $SUB_COLOR-1;
+}
+
+
+.link:hover{
+  text-decoration: underline;
+}

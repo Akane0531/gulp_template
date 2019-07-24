@@ -1,0 +1,63 @@
+doctype html
+
+include base/_config
+
+html(lang="ja")
+	head
+		include module/common/_head
+		link(href= paths.css + "style.min.css", rel="stylesheet")
+		title テストページ
+		style.
+			.square {
+				pointer-events: none;
+				width: 28px;
+				height: 28px;
+				margin: 1px;
+				font-size: 12px;
+			}
+			.el{
+				background-color :#000;
+			}
+
+			.shadow {
+				position: absolute;
+				opacity: .2;
+			}
+			
+	body
+		
+		<div id="nodeList">
+			<div class="line">
+				<div class="square shadow"></div>
+				<div class="square el"></div>
+			</div>
+			<div class="line">
+				<div class="square shadow"></div>
+				<div class="square el"></div>
+			</div>
+			<div class="line">
+				<div class="square shadow"></div>
+				<div class="square el"></div>
+			</div>
+		</div>
+		
+		<input class="progress" step=".001" type="range" min="0" max="100" value="0">
+		
+		
+		script(src= paths.js + "anime.min.js")
+		script.
+			document.getElementById('nodeList').addEventListener('click',function() {
+
+				//移動アニメーション
+				anime({
+					targets: '#nodeList .el',
+					translateX: 250,
+					direction: 'alternate',
+					delay: function(el, i, l) {
+						return i * 100;
+					},
+					endDelay: function(el, i, l) {
+						return (l - i) * 100;
+					}					
+				});
+			});

@@ -1,0 +1,9 @@
+div.grid.s-chwidth-1-2.m-chwidth-1-4.l-chwidth-1-4.center
+	-for (var i=12; i<osusume_code.length; i++)
+		div
+			div(style='background-color: #f6f6f6;').padding-bottom-s
+				a(href='https://item.rakuten.co.jp/re-wall/'+osusume_code[i]+'/', target='_top')
+					img(src=''+osusume_img[i]+'')
+				p.margin-xs #{osusume_price[i]}円
+				a(href='https://item.rakuten.co.jp/re-wall/'+osusume_code[i]+'/', target='_top').button.bgcolor-1.bgcolor-5-hover.font-xs 商品ページへ
+					i.fas.fa-shopping-cart

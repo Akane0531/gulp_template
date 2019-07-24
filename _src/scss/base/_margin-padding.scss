@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+//
+// --------------------------------------------------------------------
+
+$yohakuLists:(
+  xs: #{$SIZE_XS},
+  s: #{$SIZE_S},
+  m: #{$SIZE_M},
+  l: #{$SIZE_L},
+  xl: #{$SIZE_XL}
+);
+@media (min-width: $BREACKPOINT_SP){
+  @each $size, $yohaku in $yohakuLists {
+    .s-margin-remove {
+      margin: 0;
+    }
+    .s-margin-#{$size} {
+      margin: $yohaku;
+    }
+    .s-margin-top-#{$size} {
+      margin-top: $yohaku;
+    }
+    .s-margin-right-#{$size} {
+      margin-right: $yohaku;
+    }
+    .s-margin-bottom-#{$size} {
+      margin-bottom: $yohaku;
+    }
+    .s-margin-left-#{$size} {
+      margin-left: $yohaku;
+    }
+    .s-padding-remove {
+      padding: 0;
+    }
+    .s-padding-#{$size} {
+      padding: $yohaku;
+    }
+    .s-padding-top-#{$size} {
+      padding-top: $yohaku;
+    }
+    .s-padding-right-#{$size} {
+      padding-right: $yohaku;
+    }
+    .s-padding-bottom-#{$size} {
+      padding-bottom: $yohaku;
+    }
+    .s-padding-left-#{$size} {
+      padding-left: $yohaku;
+    }
+  }
+}
+
+@media (min-width: $BREACKPOINT_TB){
+  @each $size, $yohaku in $yohakuLists {
+    .m-margin-remove {
+      margin: 0;
+    }
+    .m-margin-#{$size} {
+      margin: $yohaku;
+    }
+    .m-margin-top-#{$size} {
+      margin-top: $yohaku;
+    }
+    .m-margin-right-#{$size} {
+      margin-right: $yohaku;
+    }
+    .m-margin-bottom-#{$size} {
+      margin-bottom: $yohaku;
+    }
+    .m-margin-left-#{$size} {
+      margin-left: $yohaku;
+    }
+    .m-padding-remove {
+      padding: 0;
+    }
+    .m-padding-#{$size} {
+      padding: $yohaku;
+    }
+    .m-padding-top-#{$size} {
+      padding-top: $yohaku;
+    }
+    .m-padding-right-#{$size} {
+      padding-right: $yohaku;
+    }
+    .m-padding-bottom-#{$size} {
+      padding-bottom: $yohaku;
+    }
+    .m-padding-left-#{$size} {
+      padding-left: $yohaku;
+    }
+  }
+}
+
+@media (min-width: $BREACKPOINT_PC){
+  @each $size, $yohaku in $yohakuLists {
+    .l-margin-remove {
+      margin: 0;
+    }
+    .l-margin-#{$size} {
+      margin: $yohaku;
+    }
+    .l-margin-top-#{$size} {
+      margin-top: $yohaku;
+    }
+    .l-margin-right-#{$size} {
+      margin-right: $yohaku;
+    }
+    .l-margin-bottom-#{$size} {
+      margin-bottom: $yohaku;
+    }
+    .l-margin-left-#{$size} {
+      margin-left: $yohaku;
+    }
+    .l-padding-remove {
+      padding: 0;
+    }
+    .l-padding-#{$size} {
+      padding: $yohaku;
+    }
+    .l-padding-top-#{$size} {
+      padding-top: $yohaku;
+    }
+    .l-padding-right-#{$size} {
+      padding-right: $yohaku;
+    }
+    .l-padding-bottom-#{$size} {
+      padding-bottom: $yohaku;
+    }
+    .l-padding-left-#{$size} {
+      padding-left: $yohaku;
+    }
+  }
+}
+
+
+
+@each $size, $yohaku in $yohakuLists {
+  .margin-remove {
+    margin: 0;
+  }
+  .margin-#{$size} {
+    margin: $yohaku;
+  }
+  .margin-top-#{$size} {
+    margin-top: $yohaku;
+  }
+  .margin-right-#{$size} {
+    margin-right: $yohaku;
+  }
+  .margin-bottom-#{$size} {
+    margin-bottom: $yohaku;
+  }
+  .margin-left-#{$size} {
+    margin-left: $yohaku;
+  }
+  .padding-remove {
+    padding: 0;
+  }
+  .padding-#{$size} {
+    padding: $yohaku;
+  }
+  .padding-top-#{$size} {
+    padding-top: $yohaku;
+  }
+  .padding-right-#{$size} {
+    padding-right: $yohaku;
+  }
+  .padding-bottom-#{$size} {
+    padding-bottom: $yohaku;
+  }
+  .padding-left-#{$size} {
+    padding-left: $yohaku;
+  }
+}

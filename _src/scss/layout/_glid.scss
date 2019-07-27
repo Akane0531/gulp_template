@@ -23,7 +23,7 @@ $glidLists:(
   	  margin: 0;
   		padding-left: $glid;
   		margin-top: $glid;
-      * {
+      > * {
         // グリッド内の要素をブロック要素に
         display: block;
       }
@@ -83,6 +83,14 @@ $glidLists:(
 
 }
 
+.left{
+	text-align: left;
+	.left > *{
+		text-align: left;
+	}
+
+}
+
 
 @media (min-width: $BREACKPOINT_SP){
 	@for $i from 1 through 8 {
@@ -98,6 +106,9 @@ $glidLists:(
 	}
 	.s-width-3-4,.s-chwidth-3-4 > * {
 		width: (100% / 4)*3;
+	}
+  .s-width-3-5,.s-chwidth-3-5 > * {
+		width: (100% / 5)*3;
 	}
 	.s-width-4-5,.s-chwidth-4-5 > * {
 		width: (100% / 5)*4;
@@ -121,6 +132,9 @@ $glidLists:(
 	.m-width-3-4,.m-chwidth-3-4 > * {
 		width: (100% / 4)*3;
 	}
+  .m-width-3-5,.m-chwidth-3-5 > * {
+    width: (100% / 5)*3;
+  }
   .m-width-4-5,.m-chwidth-4-5 > * {
     width: (100% / 5)*4;
   }
@@ -142,6 +156,9 @@ $glidLists:(
 	}
 	.l-width-3-4,.l-chwidth-3-4 > * {
 		width: (100% / 4)*3;
+	}
+  .l-width-3-5,.l-chwidth-3-5 > * {
+		width: (100% / 5)*3;
 	}
   .l-width-4-5,.l-chwidth-4-5 > * {
     width: (100% / 5)*4;
@@ -165,6 +182,9 @@ $glidLists:(
 	}
 	.all-width-3-4,.all-chwidth-3-4 > * {
 		width: (100% / 4)*3;
+	}
+  .all-width-3-5,.all-chwidth-3-5 > * {
+		width: (100% / 5)*3;
 	}
   .all-width-4-5,.all-chwidth-4-5 > * {
     width: (100% / 5)*4;

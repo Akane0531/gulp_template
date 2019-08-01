@@ -2,6 +2,8 @@ doctype html
 
 include base/_config
 include module/parts/timesale/_timesale-201907
+include module/parts/timesale/_marathon-201908
+
 
 html(lang="ja")
 	head
@@ -87,10 +89,30 @@ html(lang="ja")
 							a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=RFdSVS1BSk5GLTVXUUItMUJUVA--&rt=')
 								img.hover-up(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-5perc.jpg', target='_top')
 
-		div#Sale.wrap.padding-bottom-l
+		div#Sale.wrap
 			div.padding-top-l.padding-bottom-l.all-width-1-1.center
 				h2.midasi.font-l Sale
 					p.font-xs.color-4 今日のセール商品
+		div.wrap.padding-bottom-l
+			div#timesale.grid.s-chwidth-1-2.m-chwidth-1-3.l-chwidth-1-3.center
+
+
+		div.wrap
+			div.padding-top-l.padding-bottom-l.all-width-1-1.center
+				h2.midasi.font-l Special Sale
+					p.font-xs.color-4 102時間限定！10%OFFセール開催！<br>期間：8/4 20:00 〜 8/9 1:59
+			div.grid.s-chwidth-1-2.m-chwidth-1-4.l-chwidth-1-5.center
+				-for (var i=0; i<marathon.length; i++)
+					div
+						div.bgcolor-1-l.hover-up.shadow
+							p.center.bgcolor-1.color-w.font-xs.bgcolor-1.color-w.font-xs 8/4 20:00 〜 8/9 1:59
+							a(href='https://item.rakuten.co.jp/re-wall/'+marathon[i]['code']+'/', target='_top')
+								img(src=''+marathon[i]['img']+'')
+							p.margin-top-xs.font-xs 通常価格：#{marathon[i]['price_b']}円
+							p.margin-top-xs.color-4.font-s <span class='font-xs'>▶</span>#{marathon[i]['price_a']}円
+								span (税込)
+
+
 
 		div.wrap.padding-bottom-l
 			div#timesale.grid.s-chwidth-1-2.m-chwidth-1-3.l-chwidth-1-3.center
@@ -100,36 +122,37 @@ html(lang="ja")
 				h2.midasi.font-l Schedule
 					p.font-xs.color-4 日替わりセールスケジュール
 					p.font-xs.color-4#timesale_kikan 
-									
-		div.grid-xs.s-chwidth-1-7.center.Daybutton-area.padding-xs
-			div
-				label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button.active
-					input(type="radio" name="radio" class="radio" value="0" onclick="getRadioValue('radio');")
-					span#button0 日
-			div
-				label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
-					input(type="radio" name="radio" class="radio" value="1" onclick="getRadioValue('radio');")
-					span#button1 月
-			div
-				label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
-					input(type="radio" name="radio" class="radio" value="2" onclick="getRadioValue('radio');")
-					span#button2 火
-			div
-				label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
-					input(type="radio" name="radio" class="radio" value="3" onclick="getRadioValue('radio');")
-					span#button3 水
-			div
-				label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
-					input(type="radio" name="radio" class="radio" value="4" onclick="getRadioValue('radio');")
-					span#button4 木
-			div
-				label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
-					input(type="radio" name="radio" class="radio" value="5" onclick="getRadioValue('radio');")
-					span#button5 金
-			div
-				label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
-					input(type="radio" name="radio" class="radio" value="6" onclick="getRadioValue('radio');")
-					span#button6 土
+
+		div.wrap
+			div.grid-xs.s-chwidth-1-7.center.Daybutton-area.padding-xs
+				div
+					label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button.active
+						input(type="radio" name="radio" class="radio" value="0" onclick="getRadioValue('radio');")
+						span#button0 日
+				div
+					label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
+						input(type="radio" name="radio" class="radio" value="1" onclick="getRadioValue('radio');")
+						span#button1 月
+				div
+					label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
+						input(type="radio" name="radio" class="radio" value="2" onclick="getRadioValue('radio');")
+						span#button2 火
+				div
+					label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
+						input(type="radio" name="radio" class="radio" value="3" onclick="getRadioValue('radio');")
+						span#button3 水
+				div
+					label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
+						input(type="radio" name="radio" class="radio" value="4" onclick="getRadioValue('radio');")
+						span#button4 木
+				div
+					label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
+						input(type="radio" name="radio" class="radio" value="5" onclick="getRadioValue('radio');")
+						span#button5 金
+				div
+					label.width-1-1.bgcolor-1-l.bgcolor-1-hover.button
+						input(type="radio" name="radio" class="radio" value="6" onclick="getRadioValue('radio');")
+						span#button6 土
 
 
 

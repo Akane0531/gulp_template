@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no, address=no, email=no">
+		<link href="./assets/img/favicon/favicon.ico" rel="icon" type="image/x-icon">
+		<link href="./assets/img/favicon/icon.png" rel="apple-touch-icon" sizes="180x180">
+		<link href="https://www.rakuten.ne.jp/gold/re-wall/assets/css/reset.min.css" rel="stylesheet">
+		<link href="https://www.rakuten.ne.jp/gold/re-wall/assets/css/style.min.css" rel="stylesheet">
+		<link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" rel="stylesheet">
+		<link href="https://www.rakuten.ne.jp/gold/re-wall/sp/css/sp-itempage.css" rel="stylesheet">
+		<script src="https://www.rakuten.ne.jp/gold/re-wall/js/jquery.js"></script>
+		<link href="https://www.rakuten.ne.jp/gold/re-wall/assets/css/style.min.css" rel="stylesheet">
+		<title>壁紙のトキワ Rewall | テンプレート</title>
+		<style></style>
+		<body>
+			<div class="wrap">
+				<div class="center margin-m">
+					<h1 class="midasi font-m">輸入壁紙商品ページエディタ</h1>
+				</div>
+				<div class="grid-xs">
+					<div class="all-width-1-2">
+						<div class="padding-xs bgcolor-4-l">
+							<div>
+								<h1 class="font-m">以下のフォームを入力</h1>
+							</div>
+							<p class="font-s margin-top-s">ブランド名を選択</p>
+							<select id="brand_name">
+								<option value="rasch">rasch</option>
+								<option value="BORASTAPETER">BORASTAPETER</option>
+								<option value="eco">eco</option>
+								<option value="erismann">erismann</option>
+							</select>
+							<p class="font-s margin-top-s">コレクション名を入力</p>
+							<input class="font-s all-width-1-1" id="collection_name" type="text" placeholder="(例) Gypso" value="">
+							<p class="font-s margin-top-s">品番を入力(カンマで区切ってください)</p>
+							<input class="font-s all-width-1-1" id="collection_id" type="text" placeholder="(例) 607703,607734,607741" value="">
+							<p class="font-s margin-top-s">サイズを入力</p>
+							<input class="font-s all-width-1-1" id="collection_size" type="text" placeholder="(例) 巾53cm×長さ10.05m" value="巾53cm×長さ10.05m">
+							<p class="font-s margin-top-s">画像URLを並び順で入力(カンマで区切ってください)</p>
+							<textarea class="font-s all-width-1-1" id="imageUrl_1" rows="4" placeholder="(例) https://image.rakuten.co.jp/re-wall/cabinet/import/gypso/607703-01.jpg,https://image.rakuten.co.jp/re-wall/cabinet/import/gypso/607703-02.jpg" value="" style="word-break: break-all;"></textarea>
+							<p class="font-s margin-top-s">柄画像URLを並び順で入力(カンマで区切ってください)</p>
+							<textarea class="font-s all-width-1-1" id="imageUrl_2" rows="4" placeholder="(例) https://image.rakuten.co.jp/re-wall/cabinet/import/gypso/607703-color01.jpg,https://image.rakuten.co.jp/re-wall/cabinet/import/gypso/607703-color02.jpg" value="" style="word-break: break-all;"></textarea>
+							<div>
+								<div class="padding-xs">
+									<input type="button" value="出力！" onclick="getValue();">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="all-width-1-2">
+						<div class="padding-xs bgcolor-1-l">
+							<div>
+								<h1 class="font-m">出力結果</h1>
+							</div>
+							<div>
+								<form name="result">
+									<p class="font-s margin-top-s">商品管理番号（商品URL）</p>
+									<input class="font-s" id="item_code" name="item_code" type="text" placeholder="ここに結果が出力されます。">
+									<input type="button" value="コピー" onclick="copyToClipboard('item_code')">
+									<p class="font-s margin-top-s">商品名</p>
+									<input class="font-s" id="item_name" name="item_name" type="text" placeholder="ここに結果が出力されます。">
+									<input type="button" value="コピー" onclick="copyToClipboard('item_name')">
+									<p class="font-s margin-top-s">PC用商品説明文</p>
+									<textarea id="pc_setu" name="pc_setu" placeholder="ここに結果が出力されます。" style="width: 100%;"></textarea>
+									<input type="button" value="コピー" onclick="copyToClipboard('pc_setu')">
+									<p class="font-s margin-top-s">スマートフォン用商品説明文 </p>
+									<textarea id="sp_page" name="sp_page" placeholder="ここに結果が出力されます。" style="width: 100%;"></textarea>
+									<input type="button" value="コピー" onclick="copyToClipboard('sp_page')">
+									<p class="font-s margin-top-s">PC用販売説明文</p>
+									<textarea id="pc_page" name="pc_page" placeholder="ここに結果が出力されます。" style="width: 100%;"></textarea>
+									<input type="button" value="コピー" onclick="copyToClipboard('pc_page')">
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="all-width-1-1 margin-top-l">
+						<div class="center">
+							<h1 class="font-m">↓ページをチェック↓</h1>
+						</div>
+						<div class="tab margin-top-xs">
+							<nav class="grid-xs s-chwidth-1-3">
+								<div class="tab-button active">
+									<p class="padding-xs font-xs bgcolor-1 color-w" style="height: 100%;">PC用商品説明文</p>
+								</div>
+								<div class="tab-button">
+									<p class="padding-xs font-xs bgcolor-1 color-w" style="height: 100%;">スマートフォン用商品説明文</p>
+								</div>
+								<div class="tab-button">
+									<p class="padding-xs font-xs bgcolor-1 color-w" style="height: 100%;">PC用販売説明文</p>
+								</div>
+							</nav>
+							<div class="padding-xs font-s grid-none margin-bottom-l all-chwidth-1-1 bgcolor-1-l" style="height: 80vh;">
+								<div class="tab-content active">
+									<div class="bgcolor-w" id="result_pc_setu_html" style="width: max-content; margin: auto;"></div>
+								</div>
+								<div class="tab-content">
+									<div class="bgcolor-w" id="result_sp_page_html" style="width: 375px; height: -webkit-fill-available; overflow: auto; margin: auto;"></div>
+								</div>
+								<div class="tab-content">
+									<div class="bgcolor-w" id="result_pc_page_html" style="width: 700px; max-height: -webkit-fill-available; overflow: auto; margin: auto;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				function getValue(){
+					//- value値を取得する
+					const brand_name = document.getElementById('brand_name').value;
+					const collection_name = document.getElementById('collection_name').value;
+					const collection_id = document.getElementById('collection_id').value;
+					const collection_size = document.getElementById('collection_size').value;
+					const imageUrl_1 = document.getElementById('imageUrl_1').value;
+					const imageUrl_2 = document.getElementById('imageUrl_2').value;
+					
+					// ブランド名から国名を出力
+					const brand_Country = { rasch:'ドイツ', BORASTAPETER:'スウェーデン', eco:'スウェーデン', erismann:'ドイツ' };
+					
+					
+					// 品番を配列に格納
+					const collection_id_list = collection_id.split(",").sort(function(a, b){return a-b;});
+					
+					// 画像URL1を配列に格納
+					const imageUrl_1_list = imageUrl_1.split(",");
+					
+					// 画像URL2を配列に格納
+					const imageUrl_2_list = imageUrl_2.split(",");
+					
+					// 商品管理番号(コレクション名＋一番若い品番)を定義
+					const result_item_code = collection_name.toLowerCase() + '-' + collection_id_list[0]
+					// 商品管理番号(コレクション名＋一番若い品番)を定義ここまで
+					
+					// 商品名を定義
+					let result_item_name =''
+					if( brand_name == 'rasch') {
+						result_item_name += '壁紙 はがせる 輸入壁紙 ドイツ製 rasch ラッシュ '
+					}
+					if( brand_name == 'BORASTAPETER') {
+						result_item_name += '壁紙 はがせる 輸入壁紙 スウェーデン製 BORASTAPETER ボラスタペーター '
+					}
+					if( brand_name == 'eco') {
+						result_item_name += '壁紙 はがせる 輸入壁紙 スウェーデン製 eco WALLPAPER	'
+					}
+					if( brand_name == 'erismann') {
+						result_item_name += '壁紙 はがせる 輸入壁紙 ドイツ製 erismann エリスマン	'
+					}
+					
+					result_item_name += ' ' + collection_name + ' '
+					result_item_name += ' ' + collection_size + ' '
+					result_item_name += ' 全' + collection_id_list.length + '柄 '
+					result_item_name += '貼ってはがせる壁紙 フリース壁紙 はがせる壁紙 賃貸 diy おしゃれ'
+					// 商品名を定義ここまで
+					
+					
+					// PC用商品説明文を定義
+					let result_pc_setu = '';
+					result_pc_setu += '<head>\n\t<style>\n\t\ttable.setumeibun {\n\t\t\tfont-size: 90%;\n\t\t}\n\n\t\ttable.setumeibun th {\n\t\t\tbackground-color: #DFDFDF;\n\t\t\tcolor: black;\n\t\t\twidth: 30%;\n\t\t}\n\n\t\ttable.setumeibun td {\n\t\t\tpadding: 5px 0;\n\t\t}\n\t</style>\n</head>\n\n<body>\n\t<table width="300" border="0" class="setumeibun">\n\t\t<tr>\n\t\t\t<th>ブランド</th>\n\t\t\t<td>' + brand_name + '</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>コレクション名</th>\n\t\t\t<td>' + collection_name + '</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>品番</th>\n\t\t\t<td>';
+					// 品番を入力
+					for (let i = 0; i < collection_id_list.length; i++){
+							result_pc_setu += '\n\t\t\t\t' + collection_id_list[i] + '<br>';
+						}
+					result_pc_setu += '\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>壁紙の種類</th>\n\t\t\t<td>不織布(フリース)ビニール壁紙 【貼ってはがせる壁紙】</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>サイズ</th>\n\t\t\t<td>' + collection_size +'</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>生産国</th>\n\t\t\t<td>' + brand_Country[brand_name] + '</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>防火性能（直貼り)</th>\n\t\t\t<td>準不燃</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>防火種別</th>\n\t\t\t<td>2-3</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>ホルムアルデヒド放散量</th>\n\t\t\t<td>F☆☆☆☆</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>施工について</th>\n\t\t\t<td>必要メーター計算は<a href="https://www.rakuten.ne.jp/gold/re-wall/hakari/keisan.html">コチラ</a>&nbsp;<br>\n\t\t\t\t貼り方は<a href="https://www.rakuten.ne.jp/gold/re-wall/harikata/konanorihen.html">コチラ</a>&nbsp;<br>\n\t\t\t\t施工道具等は<a href="https://item.rakuten.co.jp/re-wall/c/0000000199/">コチラ</a></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>商品について</th>\n\t\t\t<td>1巻き（1本）単位の販売となります。&nbsp;<br>\n\t\t\t\tお客様のパソコン環境により、画面上の色と商品の色が異なる場合があります。<br>\n\t\t\t\tこの商品は海外輸入品です。<br>\n\t\t\t\tご注文より2～4週間ほど納期がかかります。</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>お支払について</th>\n\t\t\t<td>代金引換でのお支払をお断りさせていただきます。<br>\n\t\t\t\t誠に勝手ではございますが、ご了承くださいませ。</td>\n\t\t</tr>\n\t</table>\n</body>';
+					// PC用商品説明文を定義ここまで
+					
+					// スマートフォン用商品説明文を定義
+					let result_sp_page = '';
+					result_sp_page += '<link rel="stylesheet" 　　　　　　　　　　　　　　　　　　="" href="https://www.rakuten.ne.jp/gold/re-wall/sp/css/sp-itempage.css"><a id="itempage-link-wrapper"　　　　　　　　　　　　　　　　　　　　　　　　　　　class=""><iframe src="https://www.rakuten.ne.jp/gold/re-wall/sp/sp-itempage-link.html" id="itempage-link" scrolling="no" frameborder="0" =""=""></iframe =""></a ="">\n<a id="coupon-common-wrapper"　　　　　　　　　　　　　　　　　　　　　　　　　　　class=""><iframe src="https://www.rakuten.ne.jp/gold/re-wall/special/coupon/coupon.html" id="coupon-common" scrolling="no" frameborder="0" =""=""></iframe =""></a ="">\n<a href="https://item.rakuten.co.jp/re-wall/c/0000000286/">はがせる壁紙 / 輸入壁紙</a>\n\n'
+					
+					for (let i = 0; i < imageUrl_1_list.length; i++){
+							result_sp_page += '<img src="' + imageUrl_1_list[i] + '" width="100%"><br>\n';
+						}
+						
+					if( brand_name == 'rasch') {
+						result_sp_page += '<img src="https://image.rakuten.co.jp/re-wall/cabinet/import/rasch-setu.jpg" width="100%"/>\n\n'
+					}
+					if( brand_name == 'BORASTAPETER') {
+						result_sp_page += '<img src="https://image.rakuten.co.jp/re-wall/cabinet/import/boras-setu.jpg" width="100%"/>\n\n'
+					}
+					if( brand_name == 'eco') {
+						result_sp_page += '<img src="https://image.rakuten.co.jp/re-wall/cabinet/import/eco-setu.jpg" width="100%"/>\n\n'
+					}
+					if( brand_name == 'erismann') {
+						result_sp_page += '<img src="https://image.rakuten.co.jp/re-wall/cabinet/import/erismann-setsu.jpg" width="100%"/>\n\n'
+					}
+					
+					result_sp_page += '<a id="im-common-wrapper"　　　　　　　　　　　　　　　　　　　　　　　　　　　class=""><iframe src="https://www.rakuten.ne.jp/gold/re-wall/sp/category/wallpaper/import/commom/sp-im-iframe.html" id="im-common" scrolling="no" frameborder="0" =""=""></iframe =""></a ="">\n\n'
+					
+					result_sp_page += '<p>\n'
+					for (let i = 0; i < imageUrl_2_list.length; i++){
+							result_sp_page += '<img src="' + imageUrl_2_list[i] + '" alt=" width=" "="" width="100%""="">\n';
+						}
+					result_sp_page += '</p>\n'
+					
+					result_sp_page += '\n\n<link rel="stylesheet" 　　　　　　　　　　　　　　　　　　="" href="https://www.rakuten.ne.jp/gold/re-wall/sp/css/sp-itempage.css">\n<a class="sp-chuui"　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　id="">\n\t<table width="100%">\n\t\t<tr>\n\t\t\t<th colspan="2" align="center">ご購入前に必ずお読みください</th>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th width="25%" align="center">ブランド名</th>\n\t\t\t<td width="75%">' + brand_name + '</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th align="center">コレクション名</th>\n\t\t\t<td>' + collection_name + '</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th align="center">国名</th>\n\t\t\t<td>' + brand_Country[brand_name] + '</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th align="center">壁紙の種類</th>\n\t\t\t<td>不織布壁紙 フリース壁紙 貼ってはがせる壁紙 不織布ビニール壁紙</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th align="center">規格</th>\n\t\t\t<td>' + collection_size + '</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th align="center">ホルムアルデヒド等級</th>\n\t\t\t<td>Ｆ☆☆☆☆ (大臣認定)</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th align="center">防火認定(直貼り)</th>\n\t\t\t<td>準不燃</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th align="center">防火種別</th>\n\t\t\t<td>2-3</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th align="center">商品について</th>\n\t\t\t<td>●1巻き（1本）単位の販売となります。&nbsp;<br>\n\t\t\t\t●お客様のパソコン環境により、画面上の色と商品の色が異なる場合があります。&nbsp;<br>\n\t\t\t\t●この商品は「不織布壁紙」のため、のりなしのみの販売となります。<br>\n\t\t\t\t施工の際は壁にのりを塗布し、施工してください。</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th align="center">納期について</th>\n\t\t\t<td>この商品は海外輸入品です。<br>\n\t\t\t\tご注文より2～4週間ほど納期がかかります。</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th align="center">お支払について</th>\n\t\t\t<td>代金引換でのお支払をお断りさせていただきます。<br> 誠に勝手ではございますが、ご了承くださいませ。</td>\n\t\t</tr>\n\t</table>\n</a="">\n<br>\n\n<img src="https://image.rakuten.co.jp/re-wall/cabinet/import/nouki-calendar.jpg" width="100%"><br>'
+					// スマートフォン用商品説明文を定義ここまで
+					
+					// PC用販売説明文を定義
+					let result_pc_page = '';
+					result_pc_page += '<head>\n\t<meta charset="shift_jis">\n\t<style>\n\t\ttable.detile th {\n\t\t\ttext-align: left;\n\t\t\tfont-size: 250%;\n\t\t\tfont-weight: bold;\n\t\t}\n\n\t\ttable.detile td {\n\t\t\tfont-size: 80%;\n\t\t\tvertical-align: top;\n\t\t}\n\n\t\ttable.chuui th {\n\t\t\tbackground-color: #F8F8F8;\n\t\t\ttext-align: left;\n\t\t\tfont-size: 85%;\n\t\t\tborder-bottom-style: solid;\n\t\t\tborder-bottom-width: 1px;\n\t\t\tborder-bottom-color: #CBCBCB;\n\t\t}\n\n\n\t\ttable.chuui td {\n\t\t\tfont-size: 85%;\n\t\t\tpadding: 10px 0px;\n\t\t\tcolor: #464646;\n\t\t\tline-height: 140%;\n\t\t\tborder-bottom-style: solid;\n\t\t\tborder-bottom-width: 1px;\n\t\t\tborder-bottom-color: #CBCBCB;\n\t\t}\n\t</style>\n</head>'
+					
+					result_pc_page += '\n<body>\n\t<h1 class="title-01">輸入壁紙<br>\n\t\t' + brand_name + '【' + collection_name + '】' + '</h1>\n\t<h2 class="title-02">' + result_item_name + '</h2>\n'
+					
+					result_pc_page += '<p>\n'
+					for (let i = 0; i < imageUrl_1_list.length; i++){
+							result_pc_page += '<img src="' + imageUrl_1_list[i] + '" alt=" width=" "="" width="700px""=""\n';
+						}
+					result_pc_page += '</p>\n'
+				
+					
+					if( brand_name == 'rasch') {
+						result_pc_page += '\n\t<br>\n\n\t<img src="https://image.rakuten.co.jp/re-wall/cabinet/import/rasch-setu.jpg"	style="margin-bottom:10px;" /><br>\n\n\t'
+					}
+					if( brand_name == 'BORASTAPETER') {
+						result_pc_page += '\n\t<br>\n\n\t<img src="https://image.rakuten.co.jp/re-wall/cabinet/import/boras-setu.jpg"	style="margin-bottom:10px;" /><br>\n\n\t'
+					}
+					if( brand_name == 'eco') {
+						result_pc_page += '\n\t<br>\n\n\t<img src="https://image.rakuten.co.jp/re-wall/cabinet/import/eco-setu.jpg"	style="margin-bottom:10px;" /><br>\n\n\t'
+					}
+					if( brand_name == 'erismann') {
+						result_pc_page += '\n\t<br>\n\n\t<img src="https://image.rakuten.co.jp/re-wall/cabinet/import/erismann-setsu.jpg"	style="margin-bottom:10px;" /><br>\n\n\t'
+					}
+					
+					
+					result_pc_page += '<iframe src="https://www.rakuten.ne.jp/gold/re-wall/import/common/im-iframe.html" height="10000" width="700px" frameborder="0" marginwidth="0" marginheight="0" scrolling="No">インラインフレームを使用しています</iframe>\n\n\n'
+					
+					for (let i = 0; i < imageUrl_2_list.length; i++){
+							result_pc_page += '<img src="' + imageUrl_2_list[i] + '">\n';
+						}
+					
+					result_pc_page += '\n\n\t<div style="background-color:black; color:white; width:700px; padding:5px;"><b>ご購入前に必ずお読みください</b></div>\n\t<table width="700px" class="chuui">\n\t\t<tr>\n\t\t\t<th>ブランド名</th>\n\t\t\t<td>rasch</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>コレクション名</th>\n\t\t\t<td>' + collection_name + '</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>生産国</th>\n\t\t\t<td>' + brand_Country[brand_name] + '</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>壁紙の種類</th>\n\t\t\t<td>フリース壁紙 ( 不織布壁紙 ) ★貼ってはがせる壁紙</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>サイズ</th>\n\t\t\t<td>' + collection_size + '</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>ホルムアルデヒド等級</th>\n\t\t\t<td>F☆☆☆☆(大臣認定)</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>防火認定(防火種別)</th>\n\t\t\t<td>準不燃</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>防火種別</th>\n\t\t\t<td>2-3</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>商品について</th>\n\t\t\t<td>1巻き（1本）単位の販売となります。<br>\n\t\t\t\tお客様のパソコン環境により、画面上の色と商品の色が異なる場合があります。<br>\n\t\t\t\tこの商品はフリース壁紙(不織布壁紙)のため、のりなしのみの販売となります。<br>\n\t\t\t\t施工の際は壁にのりを塗布し、施工してください。</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>納期について</th>\n\t\t\t<td>この商品は海外輸入品です。\n\t\t\t\t<br>\n\t\t\t\tご注文より2～4週間ほど納期がかかります。</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<th>お支払について</th>\n\t\t\t<td>代金引換でのお支払をお断りさせていただきます。<br> 誠に勝手ではございますが、ご了承くださいませ。</td>\n\t\t</tr>\n\t</table>\n\t<br>\n\t<br>\n\n\t<img src="https://image.rakuten.co.jp/re-wall/cabinet/import/nouki-calendar.jpg" width="700px">\n\n</body>'
+					
+					result_pc_page += ''
+					
+					// PC用販売説明文を定義ここまで
+					
+					
+					//- テキストボックスに表示する
+					document.result.item_code.value = result_item_code;
+					document.result.item_name.value = result_item_name;
+					document.result.pc_setu.value = result_pc_setu;
+					document.result.sp_page.value = result_sp_page;
+					document.result.pc_page.value = result_pc_page;
+					//- タブにHTMLで表示する
+					document.getElementById('result_pc_setu_html').innerHTML = result_pc_setu;
+					document.getElementById('result_sp_page_html').innerHTML = result_sp_page;
+					document.getElementById('result_pc_page_html').innerHTML = result_pc_page;
+				}
+				
+			</script>
+		</body>
+		<script>
+			function copyToClipboard(copyTarget) {
+				var copytext = document.getElementById(copyTarget);
+				copytext.select();
+				document.execCommand('copy');
+			}
+		</script>
+		<script>
+			// ボタンactive切り替え
+			var tab_btn = document.getElementsByClassName('tab-button');
+			var tab_content = document.getElementsByClassName('tab-content');
+			for (var i=0; i<tab_btn.length; i++){
+				btnAction(tab_btn[i],tab_content[i],i);
+			}
+			function btnAction(btnDOM,tabContent,btnId){
+				btnDOM.addEventListener("click", function(){
+					tabContent.classList.add('active');
+					btnDOM.classList.add('active');
+					for (var i=0; i<tab_btn.length; i++){
+						if(btnId !== i){
+							if(tab_content[i].classList.contains('active')){
+								tab_content[i].classList.remove('active');
+								tab_btn[i].classList.remove('active');
+							}
+						}
+					}
+				})
+			}
+		</script>
+	</head>
+</html>

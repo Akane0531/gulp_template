@@ -1,0 +1,180 @@
+doctype html
+
+include base/_config
+
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		- // meta(name="robots", content="noindex,nofollow")
+		meta(name="format-detection", content="telephone=no, address=no, email=no")
+		link(href= paths.img + "favicon/favicon.ico", rel="icon", type="image/x-icon")
+		link(href= paths.img + "favicon/icon.png", rel="apple-touch-icon", sizes="180x180" )
+		link(href="https://www.rakuten.ne.jp/gold/re-wall/assets/css/reset.min.css", rel="stylesheet")
+		link(href="https://www.rakuten.ne.jp/gold/re-wall/assets/css/style.min.css", rel="stylesheet")
+		link(href="https://use.fontawesome.com/releases/v5.8.2/css/all.css", integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous", rel="stylesheet")
+		link(href="https://www.rakuten.ne.jp/gold/re-wall/sp/css/sp-itempage.css", rel="stylesheet")
+		- // link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all")
+
+		script(src='https://www.rakuten.ne.jp/gold/re-wall/js/jquery.js')
+		link(href="https://www.rakuten.ne.jp/gold/re-wall/assets/css/style.min.css", rel="stylesheet")
+		title 壁紙のトキワ Rewall | テンプレート
+		style.
+		body
+			div.wrap.padding-xs
+				div.center.margin-m
+					h1.midasi.font-m 【楽天市場用】カード型コンテンツ作成エディタ
+				div.grid-xs.s-chwidth-1-1.m-chwidth-1-1.l-chwidth-1-2
+					div
+						div.padding-xs.bgcolor-4-l(style='height: 100%;')
+							div
+								h1.font-m 以下のフォームを入力
+							p.font-s.margin-top-s 店舗URLを入力
+							input#store_url.font-s.all-width-1-1(type='text',placeholder='(例) re-wall', value='')
+							p.font-s.margin-top-s 割引率(%)を入力※小数点以下切り捨てられます
+							input#item_discount.font-s.all-width-1-1(type='text',placeholder='(例) 10', value='')
+							//- p.font-s.margin-top-s 商品管理番号を並び順で入力(カンマで区切ってください)
+							//- textarea#item_url.font-s.all-width-1-1(rows='4', placeholder='(例) ', value='', style='word-break: break-all;')
+							//- p.font-s.margin-top-s メイン画像URLを並び順で入力(カンマで区切ってください)
+							//- textarea#item_img.font-s.all-width-1-1(rows='4', placeholder='(例) https://image.rakuten.co.jp/re-wall/cabinet/import/gypso/607703-color01.jpg,https://image.rakuten.co.jp/re-wall/cabinet/import/gypso/607703-color02.jpg', value='', style='word-break: break-all;')
+								
+							div
+								div.padding-xs
+									//- input(type='button',value='出力！', onclick="getValue();")
+									input#select(type='file',value='ファイルを選択', name='select')
+
+
+					div
+						div.padding-xs.bgcolor-1-l(style='height: 100%;')
+							div
+								h1.font-m 出力結果
+							div
+								form(name='result')
+									p.font-s.margin-top-s HTML(カード部分のみ)
+									textarea#result_kard(name='result_kard', placeholder='ここに結果が出力されます。', style='width: 100%;')
+									input(type='button', value='コピー', onclick="copyToClipboard('result_kard')")
+
+									//- p.font-s.margin-top-s ヘッダー＆フッター付きHTML
+									//- textarea#result_kard_head_foot(name='result_kard_head_foot', placeholder='ここに結果が出力されます。', style='width: 100%;')
+									//- input(type='button', value='コピー', onclick="copyToClipboard('result_kard_head_foot')")
+
+
+					div.all-width-1-1.margin-top-l
+						div.center
+							h1.font-m ↓ページをチェック↓
+						div#result.bgcolor-b-l.padding-xs
+						//- div.tab.margin-top-xs
+							nav.grid-xs.s-chwidth-1-2
+								div.tab-button.active
+									p.padding-xs.font-xs.bgcolor-1.color-w(style='height: 100%;') カードのみ
+								div.tab-button
+									p.padding-xs.font-xs.bgcolor-1.color-w(style='height: 100%;') ヘッダー＆フッター付き
+							div.padding-xs.font-s.grid-none.margin-bottom-l.all-chwidth-1-1.bgcolor-1-l(style='height: 80vh;')
+								div.tab-content.active
+									div.bgcolor-w#result_pc_setu_html(style='width: max-content; margin: auto;')
+								div.tab-content
+									div.bgcolor-w#result_sp_page_html(style='width: 375px; height: -webkit-fill-available; overflow: auto; margin: auto;')
+								div.tab-content
+									div.bgcolor-w#result_pc_page_html(style='width: 700px; max-height: -webkit-fill-available; overflow: auto; margin: auto;')
+											
+
+
+			
+			script.
+				// File APIに対応しているか確認
+				if(window.File) {
+						const result = document.getElementById('result');
+						const select = document.getElementById('select');
+
+
+						// ファイルが選択されたとき
+						select.addEventListener('change', function(e) {
+								// 選択されたファイルの情報を取得
+								var fileData = e.target.files[0];
+				 
+								var reader = new FileReader();
+								// ファイル読み取りに失敗したとき
+								reader.onerror = function() {
+										alert('ファイル読み取りに失敗しました')
+								}
+								// ファイル読み取りに成功したとき
+								reader.onload = function() {
+										const store_url = document.getElementById('store_url').value;
+										const item_discount = document.getElementById('item_discount').value;
+										const item_discount_price = 1 - (item_discount / 100);
+										
+										const result_kard = document.getElementById('result_kard').value;
+										
+
+
+										// 行単位で配列にする
+										var lineArr = reader.result.split("\n");
+										// 行と列の二次元配列にする
+										var itemArr = [];
+										for (var i = 0; i < lineArr.length; i++) {
+												itemArr[i] = lineArr[i].split(",");
+										}
+				 
+										// tableで出力
+										var insert = '<div class="grid-s s-chwidth-1-2 m-chwidth-1-4 l-chwidth-1-5">\n';
+										for (var i = 1; i < itemArr.length; i++) {
+												// console.log(typeof itemArr[i][1]);
+												// console.log(Number(itemArr[i][1]).toLocaleString());
+												insert += '\t<div>\n';
+												insert += '\t\t<div class="bgcolor-w hover-up">\n';
+												insert += '\t\t\t<a href="https://item.rakuten.co.jp/' + store_url + '/' + itemArr[i][0] + '/">\n';
+												insert += '\t\t\t\t<img src="' + itemArr[i][2] + '">\n';
+												insert += '\t\t\t\t<div class="padding-xs">\n';
+												insert += '\t\t\t\t\t<p class="font-xs">通常価格:' + Number(itemArr[i][1]).toLocaleString() + '円</p>\n';
+												insert += '\t\t\t\t\t<p class="font-m bold color-4 center">' + Math.floor(Number(itemArr[i][1]) * item_discount_price).toLocaleString() + '円</p>\n';
+												insert += '\t\t\t\t</div>\n';
+												insert += '\t\t\t</a>\n';
+												insert += '\t\t</div>\n';
+												insert += '\t</div>\n';
+										}
+										insert += '</div>\n';
+										result.innerHTML = insert;
+										document.result.result_kard.value = insert;
+										
+								}
+				 
+								// ファイル読み取りを実行
+								reader.readAsText(fileData, 'Shift_JIS');
+						}, false);
+				}			
+			
+			script.
+				function getValue(){
+					//- フォームに入力されたvalue値を取得する
+					//- const brand_name = document.getElementById('brand_name').value;
+					
+				}
+			
+			script.
+				// クリックでコピー
+				function copyToClipboard(copyTarget) {
+					var copytext = document.getElementById(copyTarget);
+					copytext.select();
+					document.execCommand('copy');
+				}
+			script.
+				// ボタンactive切り替え
+				var tab_btn = document.getElementsByClassName('tab-button');
+				var tab_content = document.getElementsByClassName('tab-content');
+				for (var i=0; i<tab_btn.length; i++){
+					btnAction(tab_btn[i],tab_content[i],i);
+				}
+				function btnAction(btnDOM,tabContent,btnId){
+					btnDOM.addEventListener("click", function(){
+						tabContent.classList.add('active');
+						btnDOM.classList.add('active');
+						for (var i=0; i<tab_btn.length; i++){
+							if(btnId !== i){
+								if(tab_content[i].classList.contains('active')){
+									tab_content[i].classList.remove('active');
+									tab_btn[i].classList.remove('active');
+								}
+							}
+						}
+					})
+				}

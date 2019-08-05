@@ -2,6 +2,8 @@ doctype html
 
 include base/_config
 include module/parts/timesale/_timesale-201907
+include module/parts/timesale/_marathon-201908
+
 
 html(lang="ja")
 	head
@@ -39,17 +41,33 @@ html(lang="ja")
 				div.wrap
 					a(href='https://www.rakuten.ne.jp/gold/re-wall/timesale-page/sinseikatu_new.html', target='_top')
 						img.hover-huwahuwa(src='img/summersale_header.png',width="100%")
-			div(style='background-image: url("img/bgimg-01.jpg"); background-repeat: repeat-x;')
+			div.wrap
+				div.padding-top-l.padding-bottom-l.all-width-1-1.center
+					h2.midasi.font-l Special Sale
+						p.font-xs.color-4 102時間限定！10%OFFセール開催！<br>期間：8/4 20:00 〜 8/9 1:59
+				div.grid-s.s-chwidth-1-2.m-chwidth-1-4.l-chwidth-1-5.center
+					-for (var i=0; i<marathon.length; i++)
+						div
+							div.bgcolor-1-l.hover-up.shadow
+								p.center.bgcolor-1.color-w.font-xs.bgcolor-1.color-w.font-xs 8/4 20:00 〜 8/9 1:59
+								a(href='https://item.rakuten.co.jp/re-wall/'+marathon[i]['code']+'/', target='_top')
+									img(src=''+marathon[i]['img']+'')
+								p.margin-top-xs.font-xs 通常価格：#{marathon[i]['price_b']}円
+								p.margin-top-xs.color-4.font-s <span class='font-xs'>▶</span>#{marathon[i]['price_a']}円
+									span (税込)
+
+			//- div(style='background-image: url("img/bgimg-01.jpg"); background-repeat: repeat-x;')
+			div
 				div.padding-top-l.center
 					h2.midasi.font-l Campaign
 						p.font-xs.color-4 キャンペーン情報
 				div.all-width-1-1.padding-s.margin-bottom-l
 					div.grid.center
 						div.s-width-1-2.m-width-1-4.l-width-1-4
-							a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=QkhBTy1QNlZZLVFRNUUtTExFSA--&rt=', target='_top')
+							a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=RU81WC1YRkxGLVZUUkstVUo4Uw--&rt=', target='_top')
 								img.hover-up(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-3perc.jpg')
 						div.s-width-1-2.m-width-1-4.l-width-1-4
-							a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=RFdSVS1BSk5GLTVXUUItMUJUVA--&rt=')
+							a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=S0FVUS1KQktKLUswRTEtS0FDTQ--&rt=')
 								img.hover-up(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-5perc.jpg', target='_top')
 
 					div.wrap.margin-bottom-s
@@ -62,7 +80,7 @@ html(lang="ja")
 
 		script.
 			var date = new Date();
-			var sale_owari = new Date('2019/07/26 01:59:59');
+			var sale_owari = new Date('2019/08/09 01:59:59');
 			if (date > sale_owari) {
 					document.getElementById('sale-kaisai').style.display = "none";
 				}

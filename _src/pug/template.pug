@@ -48,6 +48,33 @@ html(lang="ja")
 				}
 			}
 			
+			.template-2[class*="template"]>.area1,.template-2[class*="template"]>.area5 {
+				width: 100%;
+			}
+			.template-2[class*="template"]>.area2{
+				display: none;
+			}
+			.template-2[class*="template"]>.area3{
+				width: 100%;
+			}
+			.template-2[class*="template"]>.area4{
+				display:none;
+			}
+			.template-2[class*="template"]>.area3 .area3-2>* {
+					width: 25%;
+				}
+			@media (max-width: 599px) and (min-width: 0){
+			.template-2[class*="template"]>.area2 {
+					display: none;
+				}
+			.template-2[class*="template"]>.area3 {
+					width: 100%;
+				}
+				.template-2[class*="template"]>.area3 .area3-2>* {
+						width: 100%;
+					}
+			}
+			
 			.pankuzu > *+*:before{
 				content:'>';
 				margin: 0 .5em;
@@ -55,8 +82,8 @@ html(lang="ja")
 			
 		body
 			div.wrap(style='width: 1040px;')
-				div.template.template-1
-					div.area1
+				div.template.template-2
+					section.area1
 						| <!-- エリア1 -->
 						div.grid-none.padding-xs
 							div.s-width-1-1.m-width-1-3.l-width-1-5.center
@@ -107,8 +134,8 @@ html(lang="ja")
 				</div>
 
 			div.wrap.margin-bottom-l.padding-xs(style='width: 1040px;')
-				div.template.template-1
-					div.area1(style='margin-bottom: 24px;')
+				div.template.template-2
+					section.area1(style='margin-bottom: 24px;')
 						div.grid-none.s-chwidth-1-2.m-chwidth-1-5.l-chwidth-1-6
 							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000286/', target='_top')
 								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/import-pcbn.jpg')
@@ -222,7 +249,7 @@ html(lang="ja")
 								a()
 									img(src='https://image.rakuten.co.jp/re-wall/cabinet/common/pickup-wfan.jpg')
 
-					div.area2.s-none
+					section.area2.s-none
 						| <!-- エリア2 -->
 						div.margin-bottom-s
 							img(src='https://www.rakuten.ne.jp/gold/re-wall/images/left/search-title.gif')
@@ -322,8 +349,8 @@ html(lang="ja")
 								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001471/', target='_top')
 									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/gardening-pcbn.jpg')
 
-					div.area3
-						div.padding-xs.bgcolor-b-l
+					section.area3
+						div.padding-xs.bgcolor-b-l.area3-1
 							| <!-- エリア3-1 ここにコンテンツ-->
 							| <!-- widthは絶対に(％)で指定すること。-->
 							div
@@ -334,14 +361,19 @@ html(lang="ja")
 								div.center.margin-top-s.margin-bottom-s
 									h2.midasi.font-m ここにタイトル
 								p.font-s ここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキストここにテキスト
-								img(src='https://placehold.jp/150x150.png')
-								img.padding-xs.all-width-1-2(src='https://placehold.jp/150x150.png')
-								img.padding-xs.all-width-1-2(src='https://placehold.jp/150x150.png')
+								div.grid-s.s-chwidth-1-2.m-chwidth-1-4.l-chwidth-1-5
+									div
+										div.bgcolor-w.hover-up
+											a(href='')
+												img(src='https://image.rakuten.co.jp/re-wall/cabinet/nakagawa/cs200-re-45x12.jpg')
+												div.padding-xs
+													p.font-xs 通常価格: 2,000円
+													p.font-m.bold.color-4.center 1,000円
 								
 						div.bgcolor-1.padding-xs.margin-top-s.bgcolor-b-l
 							| <!-- エリア3-2 -->
 							p.font-s.bgcolor-b.color-w.padding-xs オススメ商品はこちら
-							div.grid-xs.s-chwidth-1-2
+							div.grid-xs.s-chwidth-1-2.area3-2
 								div
 									a.bgcolor-w(href='https://item.rakuten.co.jp/re-wall/c/0000000436/', style='height: 100%;')
 										img(src='https://www.rakuten.ne.jp/gold/re-wall/images/middle/pickup-jw.jpg')
@@ -373,7 +405,7 @@ html(lang="ja")
 											p.font-xs.bold WALL DECORATION SHEET
 											p.font-xs 今ある壁紙の上から貼って綺麗にはがせるシール式シート。お部屋を簡単にリフォームできます。
 
-					div.area4
+					section.area4
 						div.bgcolor-1
 						| <!-- エリア4 -->
 			section.area5

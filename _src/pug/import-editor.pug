@@ -21,12 +21,12 @@ html(lang="ja")
 		title 壁紙のトキワ Rewall | テンプレート
 		style.
 		body
-			div.wrap
+			div.wrap.padding-xs
 				div.center.margin-m
 					h1.midasi.font-m 輸入壁紙商品ページエディタ
-				div.grid-xs
-					div.all-width-1-2
-						div.padding-xs.bgcolor-4-l
+				div.grid-xs.s-chwidth-1-1.m-chwidth-1-1.l-chwidth-1-2
+					div
+						div.padding-xs.bgcolor-4-l(style='height: 100%;')
 							div
 								h1.font-m 以下のフォームを入力
 							p.font-s.margin-top-s ブランド名を選択
@@ -50,15 +50,15 @@ html(lang="ja")
 							div
 								div.padding-xs
 									input(type='button',value='出力！', onclick="getValue();")
-					div.all-width-1-2
-						div.padding-xs.bgcolor-1-l
+					div
+						div.padding-xs.bgcolor-1-l(style='height: 100%;')
 							div
 								h1.font-m 出力結果
 							div
 								form(name='result')
-									p.font-s.margin-top-s 商品管理番号（商品URL）
-									input.font-s#item_code(name='item_code', type='text',placeholder='ここに結果が出力されます。')
-									input(type='button', value='コピー', onclick="copyToClipboard('item_code')")
+									//- p.font-s.margin-top-s 商品管理番号（商品URL）
+									//- input.font-s#item_code(name='item_code', type='text',placeholder='ここに結果が出力されます。')
+									//- input(type='button', value='コピー', onclick="copyToClipboard('item_code')")
 										
 									p.font-s.margin-top-s 商品名
 									input.font-s#item_name(name='item_name', type='text',placeholder='ここに結果が出力されます。')
@@ -230,7 +230,7 @@ html(lang="ja")
 					
 					
 					//- テキストボックスに表示する
-					document.result.item_code.value = result_item_code;
+					//- document.result.item_code.value = result_item_code;
 					document.result.item_name.value = result_item_name;
 					document.result.pc_setu.value = result_pc_setu;
 					document.result.sp_page.value = result_sp_page;
@@ -242,6 +242,7 @@ html(lang="ja")
 				}
 
 		script.
+			// クリックでコピー
 			function copyToClipboard(copyTarget) {
 				var copytext = document.getElementById(copyTarget);
 				copytext.select();

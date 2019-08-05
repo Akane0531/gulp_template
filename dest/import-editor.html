@@ -15,13 +15,13 @@
 		<title>壁紙のトキワ Rewall | テンプレート</title>
 		<style></style>
 		<body>
-			<div class="wrap">
+			<div class="wrap padding-xs">
 				<div class="center margin-m">
 					<h1 class="midasi font-m">輸入壁紙商品ページエディタ</h1>
 				</div>
-				<div class="grid-xs">
-					<div class="all-width-1-2">
-						<div class="padding-xs bgcolor-4-l">
+				<div class="grid-xs s-chwidth-1-1 m-chwidth-1-1 l-chwidth-1-2">
+					<div>
+						<div class="padding-xs bgcolor-4-l" style="height: 100%;">
 							<div>
 								<h1 class="font-m">以下のフォームを入力</h1>
 							</div>
@@ -49,16 +49,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="all-width-1-2">
-						<div class="padding-xs bgcolor-1-l">
+					<div>
+						<div class="padding-xs bgcolor-1-l" style="height: 100%;">
 							<div>
 								<h1 class="font-m">出力結果</h1>
 							</div>
 							<div>
 								<form name="result">
-									<p class="font-s margin-top-s">商品管理番号（商品URL）</p>
-									<input class="font-s" id="item_code" name="item_code" type="text" placeholder="ここに結果が出力されます。">
-									<input type="button" value="コピー" onclick="copyToClipboard('item_code')">
 									<p class="font-s margin-top-s">商品名</p>
 									<input class="font-s" id="item_name" name="item_name" type="text" placeholder="ここに結果が出力されます。">
 									<input type="button" value="コピー" onclick="copyToClipboard('item_name')">
@@ -238,7 +235,7 @@
 					
 					
 					//- テキストボックスに表示する
-					document.result.item_code.value = result_item_code;
+					//- document.result.item_code.value = result_item_code;
 					document.result.item_name.value = result_item_name;
 					document.result.pc_setu.value = result_pc_setu;
 					document.result.sp_page.value = result_sp_page;
@@ -252,6 +249,7 @@
 			</script>
 		</body>
 		<script>
+			// クリックでコピー
 			function copyToClipboard(copyTarget) {
 				var copytext = document.getElementById(copyTarget);
 				copytext.select();

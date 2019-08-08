@@ -49,7 +49,7 @@ $WRAP_WIDTH: 960px;
   margin: 0 auto;
 }
 
-// wrap
+// other
 // ------------------------------------------------------------------------
 canvas,
 img,
@@ -79,4 +79,12 @@ hr {
 
 .link:hover{
   text-decoration: underline;
+}
+
+ul,ol{
+  margin-left: 1.5em;
+  li{
+    padding: .2em 0;
+    border-bottom: solid 1px #f6f6f6;
+  }
 }

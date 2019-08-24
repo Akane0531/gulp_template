@@ -22,7 +22,7 @@ html(lang="ja")
 				p.font-s 長期休暇の配送については
 					a(href='https://www.rakuten.ne.jp/gold/re-wall/kyuuka-chien/choukikyuuka-1907.html', target='_top').color-4.bold.link こちら
 				
-		div#sale-owari
+		//- div#sale-owari
 			div#Sale.wrap.padding-bottom-l
 				div.all-width-1-1.center
 					h2.midasi.font-l Sale
@@ -41,7 +41,7 @@ html(lang="ja")
 				div.wrap
 					a(href='https://www.rakuten.ne.jp/gold/re-wall/timesale-page/sinseikatu_new.html', target='_top')
 						img.hover-huwahuwa(src='img/summersale_header.png',width="100%")
-			div.wrap
+			//- div.wrap
 				div.padding-top-l.padding-bottom-l.all-width-1-1.center
 					h2.midasi.font-l Special Sale
 						p.font-xs.color-4 102時間限定！10%OFFセール開催！<br>期間：8/4 20:00 〜 8/9 1:59
@@ -62,7 +62,7 @@ html(lang="ja")
 					h2.midasi.font-l Campaign
 						p.font-xs.color-4 キャンペーン情報
 				div.all-width-1-1.padding-s.margin-bottom-l
-					div.grid.center
+					//- div.grid.center
 						div.s-width-1-2.m-width-1-4.l-width-1-4
 							a(href!='https://coupon.rakuten.co.jp/getCoupon?getkey=RU81WC1YRkxGLVZUUkstVUo4Uw--&rt=', target='_top')
 								img.hover-up(src='https://image.rakuten.co.jp/re-wall/cabinet/special/coupon-pc-3perc.jpg')
@@ -74,18 +74,18 @@ html(lang="ja")
 						div.grid.s-chwidth-1-1.m-chwidth-1-2.center
 							div
 								a.all-width-1-1.button-color-5(href='https://www.rakuten.co.jp/re-wall/news.html', target='_new') メルマガ登録はこちら(PC)
-							div
+							//- div
 								a.all-width-1-1.button-color-4(href='https://www.rakuten.ne.jp/gold/re-wall/timesale-page/timesale.html', target='_top') 日替わりセール会場はこちら
 
 
 		script.
 			var date = new Date();
-			var sale_owari = new Date('2019/08/09 01:59:59');
+			var sale_owari = new Date('2019/08/18 23:59:59');
 			if (date > sale_owari) {
 					document.getElementById('sale-kaisai').style.display = "none";
 				}
 			else {
-				document.getElementById('sale-owari').style.display = "none";
+				//- document.getElementById('sale-owari').style.display = "none";
 				}
 
 		script.

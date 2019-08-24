@@ -1,63 +1,17 @@
 doctype html
 
 include base/_config
-include module/parts/timesale/_timesale-201907
 
 html(lang="ja")
 	head
 		include module/common/_head
-		link(href= paths.css + "style.min.css", rel="stylesheet")
+		link(href="https://www.rakuten.ne.jp/gold/re-wall/assets/css/style.min.css", rel="stylesheet")
 		title 壁紙のトキワ Rewall | テンプレート
-		style.
-			.template{
-				display: -webkit-box;
-				display: -webkit-flex;
-				display: -ms-flexbox;
-				display: flex;
-				margin: 0;
-				margin-left: -8px;
-				padding: 0;
-				list-style: none;
-				-webkit-flex-wrap: wrap;
-				-ms-flex-wrap: wrap;
-				flex-wrap: wrap;
-			}
-			.template>* {
-				margin: 0;
-				margin-top: 8px;
-				padding-left: 8px;
-			}
-
-			.template-1[class*="template"]>.area1,.template-1[class*="template"]>.area5 {
-				width: 100%;
-			}
-			.template-1[class*="template"]>.area2{
-				width: 25%;
-			}
-			.template-1[class*="template"]>.area3{
-				width: 75%;
-			}
-			.template-1[class*="template"]>.area4{
-				display:none;
-			}
-			@media (max-width: 599px) and (min-width: 0){
-			.template-1[class*="template"]>.area2 {
-					display: none;
-				}
-			.template-1[class*="template"]>.area3 {
-					width: 100%;
-				}
-			}
-
-			.pankuzu > *+*:before{
-				content:'>';
-				margin: 0 .5em;
-			}
-
+			
 		body
 			div.wrap(style='width: 1040px;')
 				div.template.template-1
-					div.area1
+					section.area1
 						| <!-- エリア1 -->
 						div.grid-none.padding-xs
 							div.s-width-1-1.m-width-1-3.l-width-1-5.center
@@ -79,15 +33,15 @@ html(lang="ja")
 											span.font-xs (平日9時から17時まで受付)
 									div.s-none.m-none.all-width-1-3
 										img(src='https://www.rakuten.ne.jp/gold/re-wall/images/header/tokiwa-logo.png')
-
+											
 								nav.font-xs.margin-top-s
-									a.link(href='https://www.rakuten.ne.jp/gold/re-wall/') HOME |
-									a.link(href='https://event.rakuten.co.jp/guide/howtobuy/') ご利用ガイド |
-									a.link(href='https://www.rakuten.ne.jp/gold/re-wall/info.html') 店舗情報 |
-									a.link(href='https://www.rakuten.ne.jp/gold/re-wall/info2.html') 送料・お支払・返品 |
-									a.link(href='https://review.rakuten.co.jp/shop/4/243143_243143/?sort=3&b=0&mf=&a=') お客様の声 |
+									a.link(href='https://www.rakuten.ne.jp/gold/re-wall/') HOME | 
+									a.link(href='https://event.rakuten.co.jp/guide/howtobuy/') ご利用ガイド | 
+									a.link(href='https://www.rakuten.ne.jp/gold/re-wall/info.html') 店舗情報 | 
+									a.link(href='https://www.rakuten.ne.jp/gold/re-wall/info2.html') 送料・お支払・返品 | 
+									a.link(href='https://review.rakuten.co.jp/shop/4/243143_243143/?sort=3&b=0&mf=&a=') お客様の声 | 
 									a.link(href='https://www.rakuten.co.jp/') 楽天市場
-
+			
 			div.bgcolor-b-l
 				div.wrap.right(style='width: 1040px;')
 					<div id="searchform" class="margin-right-xs">
@@ -102,128 +56,19 @@ html(lang="ja")
 						<input value="A" type="hidden" name="f">
 						<input class="text bgcolor-w" style="margin: 8px 4px; padding: 4px; border: solid 1px #b2b2b2; max-width: 240px; width: 40%;" type="text" name="sitem" placeholder="商品を検索">
 						<!-- 検索キーワード-->
-						<input class="btn" style="padding: 2px 8px; border: solid 1px #b2b2b2;"	value="検索" type="submit">
+						<input class="btn" style="padding: 2px 8px; border: solid 1px #b2b2b2;"  value="検索" type="submit">
 						<!-- 検索ボタン-->
 					</form>
 				</div>
 
 			div.wrap.margin-bottom-l.padding-xs(style='width: 1040px;')
 				div.template.template-1
-					div.area1(style='margin-bottom: 24px;')
+					section.area1(style='margin-bottom: 24px;')
 						div.grid-none.s-chwidth-1-2.m-chwidth-1-5.l-chwidth-1-6
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000286/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/import-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000723/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/fleece-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000986/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/seal-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000189/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/vinyl-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000101/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/dcfix-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000467/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/altino-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000323/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/cs-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000971/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/mt-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000667/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/penki-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000879/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/tool-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000788/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/yuka-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001101/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/diytile-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000145/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/wallsticker-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001005/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/fel-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001312/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/clock-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001313/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/light-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001325/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/mirror-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001344/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/singu-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001314/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/bed-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001321/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/chair-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001322/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/table-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001475/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/dining-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001315/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/sofa-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001316/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/tv-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001327/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/rug-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001472/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/cushion-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001329/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/nitiyou-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001317/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/syuunou-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001363/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/rack-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001320/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/kitchen-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001530/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/laundry-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001319/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/entrance-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001311/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/interior-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000744/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/designers-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001411/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/kaden-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000733/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/stikwood-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000970/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/wallpanel-pcbn.jpg')
-							a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001471/', target='_top')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/gardening-pcbn.jpg')
-						div.grid-xs.s-chwidth-1-2.m-chwidth-1-3
-							div
-								a.padding-xs.bgcolor-b-l(href='https://item.rakuten.co.jp/re-wall/trialset/', style='height: 100%;')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/images/header/headerbn-trialset.jpg')
-									p.font-xs.bold 初心者大歓迎！輸入壁紙トライアルセット
-									p.font-xs 輸入壁紙＋必要な施工道具がセットになりました。貼ってはがせるので賃貸でも安心して貼ることができます。
-							div
-								a.padding-xs.bgcolor-b-l(href='https://item.rakuten.co.jp/re-wall/c/0000001628/', style='height: 100%;')
-									img(src='https://image.rakuten.co.jp/re-wall/cabinet/spice/spice-img.jpg')
-									p.font-xs.bold SPICE | 雑貨メーカー
-									p.font-xs おしゃれなだけでなく機能性も抜群なトレンドアイテムが勢揃い！新商品も続々追加中です！
-							div
-								a.padding-xs.bgcolor-b-l(href='https://item.rakuten.co.jp/re-wall/c/0000000195/', style='height: 100%;')
-									img(src='https://image.rakuten.co.jp/re-wall/cabinet/common/header/dcfix-haiban-bn.jpg')
-									p.font-xs.bold 当店人気No.1 | ドイツ製粘着シート d-c-fix
-									p.font-xs 人気の「d-c-fix」が廃盤セールを開始！廃盤商品や訳アリ商品が最大50％OFF！ぜひお買い求めください！
-						div.grid-xs.s-chwidth-1-2.m-chwidth-1-3
-							div
-								a()
-									img(src='https://image.rakuten.co.jp/re-wall/cabinet/common/pickup-altyno.jpg')
-							div
-								a()
-									img(src='https://image.rakuten.co.jp/re-wall/cabinet/common/pickup-diytile.jpg')
-							div
-								a()
-									img(src='https://image.rakuten.co.jp/re-wall/cabinet/common/pickup-kemikaru.jpg')
-							div
-								a()
-									img(src='https://image.rakuten.co.jp/re-wall/cabinet/common/pickup-penki-kakeru.jpg')
-							div
-								a()
-									img(src='https://image.rakuten.co.jp/re-wall/cabinet/common/pickup-kokuban.jpg')
-							div
-								a()
-									img(src='https://image.rakuten.co.jp/re-wall/cabinet/common/pickup-wfan.jpg')
+							include module/rewall-template/_category-list
+						include module/rewall-template/_head-contents
 
-					div.area2.s-none
+					section.area2.s-none
 						| <!-- エリア2 -->
 						div.margin-bottom-s
 							img(src='https://www.rakuten.ne.jp/gold/re-wall/images/left/search-title.gif')
@@ -239,265 +84,140 @@ html(lang="ja")
 								<input value="A" type="hidden" name="f">
 								<input class="text bgcolor-w all-width-3-4" style="border: solid 1px #b2b2b2; padding: 2px;" type="text" name="sitem" placeholder="商品を検索">
 								<!-- 検索キーワード-->
-								<input class="btn all-width-1-5" style="border: solid 1px #b2b2b2;"	value="検索" type="submit">
+								<input class="btn all-width-1-5" style="border: solid 1px #b2b2b2;"  value="検索" type="submit">
 								<!-- 検索ボタン-->
 							</form>
 						</div>
 						div
 							div.grid-none.s-chwidth-1-1
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/images/left/category-title.gif')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000286/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/import-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000723/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/fleece-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000986/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/seal-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000189/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/vinyl-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000101/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/dcfix-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000467/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/altino-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000323/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/cs-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000971/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/mt-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000667/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/penki-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000879/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/tool-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000788/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/yuka-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001101/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/diytile-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000145/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/wallsticker-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001005/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/fel-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001312/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/clock-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001313/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/light-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001325/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/mirror-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001344/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/singu-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001314/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/bed-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001321/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/chair-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001322/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/table-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001475/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/dining-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001315/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/sofa-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001316/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/tv-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001327/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/rug-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001472/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/cushion-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001329/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/nitiyou-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001317/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/syuunou-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001363/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/rack-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001320/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/kitchen-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001530/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/laundry-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001319/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/entrance-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001311/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/interior-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000744/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/designers-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001411/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/kaden-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000733/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/stikwood-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000000970/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/wallpanel-pcbn.jpg')
-								a.bgcolor-1(href='https://item.rakuten.co.jp/re-wall/c/0000001471/', target='_top')
-									img(src='https://www.rakuten.ne.jp/gold/re-wall/header/jpg/gardening-pcbn.jpg')
-
-					div.area3
-						div.padding-xs.bgcolor-b-l
+								include module/rewall-template/_category-list
+					section.area3
+						div.padding-xs.area3-1
 							| <!-- エリア3-1 ここにコンテンツ-->
 							| <!-- widthは絶対に(％)で指定すること。-->
 							div
 								nav.pankuzu.font-xs
 									a.link(href='https://www.rakuten.ne.jp/gold/re-wall/') HOME
 									a.link(href='https://item.rakuten.co.jp/re-wall/c/0000000286/') はがせる輸入壁紙
-									a.link(href='') 輸入壁紙の貼り方
+									a.link(href='') 輸入壁紙・フリース壁紙の貼り方
 								div.center.margin-top-s.margin-bottom-s
 									h2.midasi.font-m 輸入壁紙、フリース壁紙の貼り方
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/sp/category/wallpaper/import/commom/fleece-img01.jpg')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/import/point-01.gif')
-								img(src='https://www.rakuten.ne.jp/gold/re-wall/import/point-02.gif')
-								img(src='https://image.rakuten.co.jp/re-wall/cabinet/fleece/common/fleece-common09.jpg')
-								p.color-w.bgcolor-b.padding-xs コンテンツ
+								h3.font-m.margin-top-m.center.bgcolor-1.color-w 用意するもの
+								div.grid-xs.s-chwidth-1-2.m-chwidth-1-6.center.font-xs
+									a(href='https://item.rakuten.co.jp/re-wall/superfresco/')
+										img(src='assets/img/fresco.jpg')
+										p 粉のり
+									a(href='https://item.rakuten.co.jp/re-wall/baketu/')
+										img(src='assets/img/bucket.jpg')
+										p バケツ
+									a(href='https://item.rakuten.co.jp/re-wall/yuka-cutter/')
+										img(src='assets/img/cutter.jpg')
+										p カッター
+									a(href='https://item.rakuten.co.jp/re-wall/bera7/')
+										img(src='assets/img/bera7.jpg')
+										p 地ベラ
+									a(href='https://item.rakuten.co.jp/re-wall/nori-ro-ra-/')
+										img(src='assets/img/roller.jpg')
+										p ローラー(orハケ）
+									a(href='https://item.rakuten.co.jp/re-wall/sumusa/')
+										img(src='assets/img/smoother.jpg')
+										p スムーサー
+								h3.font-m.margin-top-m.center.bgcolor-1.color-w あると便利なアイテム
+								div.grid-xs.s-chwidth-1-2.m-chwidth-1-6.center.font-xs
+									a(href='https://item.rakuten.co.jp/re-wall/masker/')
+										img(src='assets/img/masker.jpg')
+										p マスカー
+									a(href='https://item.rakuten.co.jp/re-wall/mt50/')
+										img(src='assets/img/masking-tape.jpg')
+										p マスキングテープ
+									a(href='')
+										img(src='assets/img/nazehake-s.jpg')
+										p 撫ぜバケ
+								h3.font-m.margin-top-m.center.bgcolor-1.color-w お得な施工道具セット
+								div.grid-xs.s-chwidth-1-2.m-chwidth-1-4.center.font-xs
+									a(href='https://item.rakuten.co.jp/re-wall/ro-ra-set02/')
+										img(src='https://shop.r10s.jp/re-wall/cabinet/wall/dougu/ro-ra-set2.jpg')
+										p 9点セット
+									a(href='https://item.rakuten.co.jp/re-wall/ro-ra-set/')
+										img(src='https://shop.r10s.jp/re-wall/cabinet/wall/dougu/tool9set-main.jpg')
+										p 9点セット＋のり
+									a(href='https://item.rakuten.co.jp/re-wall/ro-ra-set-all/')
+										img(src='https://shop.r10s.jp/re-wall/cabinet/wall/dougu/ro-ra-set-all.jpg')
+										p 12点セット
+								h3.font-m.margin-top-m.center.bgcolor-1.color-w 貼り方動画はコチラ
+								div.s-none
+									<script src="https://stream.cms.rakuten.co.jp/gate/play/?w=700&h=400&mid=1101407981&shop_id=243143&vid=878673676002&pt=0&cmid=1100000001&bkt=&cl1=&cl2=&cl3=&cl4=&did=" type="text/javascript"></script>
+								div.m-none.l-none
+									<script src="https://stream.cms.rakuten.co.jp/gate/play/?w=320&h=200&mid=1101407981&shop_id=243143&vid=878673676002&pt=0&cmid=1100000001&bkt=&cl1=&cl2=&cl3=&cl4=&did=" type="text/javascript"></script>
+
+								h3.font-m.margin-top-m.center.bgcolor-1.color-w 貼り方
+								div.grid-xs.font-xs.s-chwidth-1-1.m-chwidth-1-2
+									div
+										p.font-m.bgcolor-1-l.padding-xs 1.のりを作る。
+										p.font-s.margin-top-s ぬるま湯を入れたバケツに、粉のりを入れて混ぜます。
+										div.midasi-2.margin-top-m.font-xs 
+											p ・バケツにビニール袋を被せておくと、後片付けが簡単です！
+											p ・少量ずつ粉のりを混ぜると、ダマができにくくなります。
+									img(src='assets/img/harikata-01.jpg')
+									hr.hr-2.all-width-1-1
+									div
+										p.font-m.bgcolor-1-l.padding-xs 2.壁紙を必要な長さにカット。
+										p.font-s.margin-top-s 壁のサイズに合わせて、壁紙を必要な長さにカットします。<br>天井高＋5cmほど余分にカットしましょう。
+										div.midasi-2.margin-top-m.font-xs 
+											p ・カットする際は柄のリピートに気をつけて下さい。
+									img(src='assets/img/harikata-02.jpg')
+									hr.hr-2.all-width-1-1
+									div
+										p.font-m.bgcolor-1-l.padding-xs 3.汚したくない床などを養生する。
+										p.font-s.margin-top-s ビニール袋やマスカー、マスキングテープ等で汚したくない箇所を保護しましょう。
+									img(src='assets/img/harikata-03.jpg')
+									hr.hr-2.all-width-1-1
+									div
+										p.font-m.bgcolor-1-l.padding-xs 4.壁紙1枚分ののりを塗る。
+										p.font-s.margin-top-s 1で用意したのり、ハケを使って壁に壁紙1枚分を塗ります。
+										div.midasi-2.margin-top-m.font-xs 
+											p なぞった時に線ができるくらいにたっぷり塗りましょう。
+											p のりは20分位乾かないので、急がなくて大丈夫です。
+									img(src='assets/img/harikata-04.jpg')
+									hr.hr-2.all-width-1-1
+									div
+										p.font-m.bgcolor-1-l.padding-xs 5.1枚目の壁紙を貼る。
+										p.font-s.margin-top-s 切りしろ部分を出すために、上に5cm程余分に貼ります。
+										div.midasi-2.margin-top-m.font-xs 
+											p 撫ぜバケやスムーサーで、真ん中→上→下と撫でると、きれいに空気を抜くことが出来ます。
+									img(src='assets/img/harikata-05.jpg')
+									hr.hr-2.all-width-1-1
+									div
+										p.font-m.bgcolor-1-l.padding-xs 6.壁紙をカットする。
+										p.font-s.margin-top-s カットする部分を竹べらなどで、クセをしっかりつけ、地ベラとカッターでカットをします。
+										div.midasi-2.margin-top-m.font-xs 
+											p 写真のように、地ベラを定規代わりにして切ると簡単！
+									img(src='assets/img/harikata-06.jpg')
+									hr.hr-2.all-width-1-1
+									div
+										p.font-m.bgcolor-1-l.padding-xs 7.同様に2枚目を貼る。
+										p.font-s.margin-top-s 4と同様にのりを塗り、その上に2枚目の壁紙を貼ります。<br>柄のある壁紙は、リピートの柄が合うように注意して貼りましょう。<br>貼り終えたら、6と同様にカットします。
+									img(src='assets/img/harikata-07.jpg')
+									hr.hr-2.all-width-1-1
+									div.center.all-width-1-1
+										p.all-width-1-1.font-m 5〜6を繰り返したら完成です！
+										div.all-width-1-1.margin-top-s
+											img.all-width-2-3(src='assets/img/harikata-08.jpg')
+									hr.hr-2.all-width-1-1
+										
+								p.color-w.bgcolor-b.padding-xs.margin-top-s コンテンツ
 								a(href='https://item.rakuten.co.jp/re-wall/fleeceotamesiset/')
 									img.all-width-1-2(src='https://www.rakuten.ne.jp/gold/re-wall/kabegami/images/fleeceset-bn-01.jpg')
 								a(href='https://item.rakuten.co.jp/re-wall/trialset/')
 									img.all-width-1-2(src='https://www.rakuten.ne.jp/gold/re-wall/kabegami/images/trial-bn.jpg')
-								a(href='https://www.rakuten.ne.jp/gold/re-wall/harikata/konanorihen.html')
-									img.all-width-1-2(src='https://www.rakuten.ne.jp/gold/re-wall/hakari/fresco-harikatabn.jpg')
-								a(href='https://item.rakuten.co.jp/re-wall/c/0000000428/')
-									img.all-width-1-2(src='https://www.rakuten.ne.jp/gold/re-wall/kabegami/images/kabegami_head03.jpg')
-								div.grid-xs.s-chwidth-1-2.m-chwidth-1-4
-									div
-										a(href='https://item.rakuten.co.jp/re-wall/c/0000000428/')
-											img(src='https://www.rakuten.ne.jp/gold/re-wall/kabegami/images/kabegami_head03.jpg')
-								img(src='')
-								img(src='')
-								img(src='')
-								img(src='')
-
+								
 						div.bgcolor-1.padding-xs.margin-top-s.bgcolor-b-l
 							| <!-- エリア3-2 -->
-							p.font-s.bgcolor-b.color-w.padding-xs オススメ商品はこちら
-							div.grid-xs.s-chwidth-1-2
-								div
-									a.bgcolor-w(href='https://item.rakuten.co.jp/re-wall/c/0000000436/', style='height: 100%;')
-										img(src='https://www.rakuten.ne.jp/gold/re-wall/images/middle/pickup-jw.jpg')
-										div.padding-xs
-											p.font-xs.bold Jebrille Wallpaepr
-											p.font-xs 賃貸でおしゃれにをコンセプトとした、日本初の貼ってはがせる「フリースデジタル壁紙」ブランドです。
-								div
-									a.bgcolor-w(href='https://item.rakuten.co.jp/re-wall/c/0000000286/', style='height: 100%;')
-										img(src='https://www.rakuten.ne.jp/gold/re-wall/images/middle/pickup-im.jpg')
-										div.padding-xs
-											p.font-xs.bold IMPORT WALLPAPER
-											p.font-xs スウェーデンやドイツなどから仕入れた海外製の壁紙。海外ならではのおしゃれな壁紙が魅力的。
-								div
-									a.bgcolor-w(href='https://item.rakuten.co.jp/re-wall/c/0000000668/', style='height: 100%;')
-										img(src='https://www.rakuten.ne.jp/gold/re-wall/images/middle/pickup-kakeru.jpg')
-										div.padding-xs
-											p.font-xs.bold KARERU PAINT
-											p.font-xs 塗装面が黒板のようにチョークで描ける壁になるペンキ。落書きをとことん楽しむことができます。
-								div
-									a.bgcolor-w(href='https://item.rakuten.co.jp/re-wall/c/0000000590/', style='height: 100%;')
-										img(src='https://www.rakuten.ne.jp/gold/re-wall/images/middle/pickup-wpt.jpg')
-										div.padding-xs
-											p.font-xs.bold THE WALLPAPER TOKYO
-											p.font-xs アパレルブランドやデザイナーとコラボした壁紙ブランド。洋服のように壁紙のおしゃれを楽しめる。
-								div
-									a.bgcolor-w(href='https://item.rakuten.co.jp/re-wall/c/0000000561/', style='height: 100%;')
-										img(src='https://www.rakuten.ne.jp/gold/re-wall/images/middle/pickup-wds.jpg')
-										div.padding-xs
-											p.font-xs.bold WALL DECORATION SHEET
-											p.font-xs 今ある壁紙の上から貼って綺麗にはがせるシール式シート。お部屋を簡単にリフォームできます。
-
-					div.area4
+							include module/rewall-template/_foot-contents
+					section.area4
 						div.bgcolor-1
 						| <!-- エリア4 -->
 			section.area5
 				div.bgcolor-b-l
 					| <!-- エリア5 -->
-					div.wrap(style='width: 1040px;')
-						h3.padding-xs.font-m.bold SHOPPING GUIDE | お買い物ガイド
-						div.padding-xs
-							div.grid-xs.s-chwidth-1-2.m-chwidth-1-4
-								div
-									div.bgcolor-w(style='height: 100%;')
-										img(src='https://www.rakuten.ne.jp/gold/re-wall/images/fotter/kounyuuguide-01.jpg')
-										h3.padding-xs.font-xs.bold 1.インターネットからのご注文
-											hr(style='border-bottom: solid 2px #dadada;')
-										div.padding-xs
-											p.font-xs インターネットからのご注文は、365日24時間いつでも受付中です。
-								div
-									div.bgcolor-w(style='height: 100%;')
-										img(src='https://www.rakuten.ne.jp/gold/re-wall/images/fotter/kounyuuguide-02.jpg')
-										h3.padding-xs.font-xs.bold 2.当店から、メールのご確認
-											hr(style='border-bottom: solid 2px #dadada;')
-										div.padding-xs
-											p.font-xs ご注文直後に楽天市場より自動配信メール、当店で確認次第お送りするメールがお客様の元に届きます。
-											p.font-xs ご注文に間違いが無いか必ずご確認ください。
-								div
-									div.bgcolor-w(style='height: 100%;')
-										img(src='https://www.rakuten.ne.jp/gold/re-wall/images/fotter/kounyuuguide-03.jpg')
-										h3.padding-xs.font-xs.bold 3.入金(銀行振込・コンビニ支払いの方のみ)
-											hr(style='border-bottom: solid 2px #dadada;')
-										div.padding-xs
-											p.font-xs 銀行振込・コンビニ支払いをご選択のお客様は、前払い制のため、ご入金を行ってください。
-								div
-									div.bgcolor-w(style='height: 100%;')
-										img(src='https://www.rakuten.ne.jp/gold/re-wall/images/fotter/kounyuuguide-04.jpg')
-										h3.padding-xs.font-xs.bold 4.発送・商品お届け
-											hr(style='border-bottom: solid 2px #dadada;')
-										div.padding-xs
-											p.font-xs ご注文確定後、出荷準備をします。
-											p.font-xs 配送準備が整い次第、送付状の伝票番号をメールにてお知らせします。（配送に関わるお問い合わせは各配送業者へのご連絡をお願いします）
-
-							div.grid-xs.s-chwidth-1-1.m-chwidth-1-3.margin-top-s
-								div
-									div.bgcolor-w(style='height: 100%;')
-										h3.padding-xs.font-s.bold 送料・配送方法について
-											hr(style='border-bottom: solid 2px #dadada;')
-										div.padding-xs
-											p.font-s.bold 通常送料：886円(税込)
-											p.font-xs ※離島・一部地域は別途追加料金が一部地域は追加送料がかかる場合があります。その際別途ご連絡いたします。
-											p.font-xs 配送日の指定は3営業日以降でお願いします。ただし商品によっては指定日を承れない場合がございます。
-											p.font-xs 海外への配送は承っておりません。
-								div
-									div.bgcolor-w(style='height: 100%;')
-										h3.padding-xs.font-s.bold お支払いについて
-											hr(style='border-bottom: solid 2px #dadada;')
-										div.padding-xs
-											p.font-xs クレジットカード / 代金引換 / 銀行振込 / コンビニ前払い決済からお選びいただけます。
-											img.margin-top-xs(src='https://www.rakuten.ne.jp/gold/re-wall/images/fotter/credit.png')
-											p.margin-top-s.font-xs 代金引換をご選択いただいた場合は、手数料324円(税込)がかかります。
-											p.font-xs 一部地域・離島は代金引換が利用できない場合がございます。
-											p.font-xs 代金引換でのお支払をお断りさせていただいている商品がございます 誠に勝手ではございますが、あらかじめご了承ください。
-								div
-									div.bgcolor-w(style='height: 100%;')
-										h3.padding-xs.font-s.bold 返品・交換・キャンセルについて
-											hr(style='border-bottom: solid 2px #dadada;')
-										div.padding-xs
-											p.font-xs お客様のご都合による返品・交換・キャンセルは原則承っておりません。
-											p.font-xs 不良品による返品・交換の場合は、商品到着後1週間以内に当店までご連絡下さい。1週間以上経過した不良品による返品は原則承ることができません。商品到着後は、お早めに商品の確認をお願いします。
-											p.font-xs.margin-top-xs 開封後・使用済みの商品は返品できません。 商品が破損していないか開封前によくご確認ください。
-											p.font-xs 壁紙・カッティングシートは、ご注文確定後にお客様専用にカット又はのり付けを行うため、ご注文のキャンセル・返品・交換は一切承ることができません。
-								div
-									div.bgcolor-w(style='height: 100%;')
-										h3.padding-xs.font-s.bold 営業日カレンダー
-											hr(style='border-bottom: solid 2px #dadada;')
-										div.padding-xs
-											<iframe src="https://www.rakuten.ne.jp/gold/re-wall/fotter/fotter-calendar.html" height="250px" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-								div
-									div.bgcolor-w(style='height: 100%;')
-										h3.padding-xs.font-s.bold お問い合わせについて
-											hr(style='border-bottom: solid 2px #dadada;')
-										div.padding-xs
-											address
-												<i class="fas fa-envelope fa-fw"></i>
-												a(href='mailto:rewall@tokiwa.net')
-													span.font-s.bold.link rewall@tokiwa.net
-											address
-												<i class="fas fa-mobile-alt fa-fw"></i>
-												a(href='tel:0584-89-0071')
-													span.font-s.bold 0584-89-0071
-												span.font-xs (平日9時から17時まで受付)
-											address
-												<i class="fas fa-phone fa-fw"></i>
-												a(href='tel:0120-771-332')
-													span.font-s.bold 0120-771-332
-												span.font-xs (平日9時から17時まで受付)
-											p.font-xs.margin-top-xs ※17時以降・休業日のメールにつきましては、翌営業日に返信させていただきますのでご了承ください。
-								div
-									div.bgcolor-w(style='height: 100%;')
-										h3.padding-xs.font-s.bold プライバシーポリシー
-											hr(style='border-bottom: solid 2px #dadada;')
-										div.padding-xs
-											p.font-xs お客様からお預かりした個人情報は商品の発送とご連絡以外には一切使用致しません。
-											p.font-xs.margin-top-xs お客様の個人情報は法令の定める場合などを除き、ご本人様の事前の了解なく第三者に提供・提示されることはありません。
-										h3.padding-xs.font-s.bold 運営会社
-											hr(style='border-bottom: solid 2px #dadada;')
-										div.padding-xs
-											p.font-s トキワエス・エヌ・シー株式会社
-											p.font-xs 〒503-0944
-											p.font-xs 岐阜県大垣市横曽根5-125-1
-					p.font-xs.bgcolor-b.color-w.center Copyright © TOKIWA S.N.C, LTD. All Rights Reserved.
+					include module/rewall-template/_footer
